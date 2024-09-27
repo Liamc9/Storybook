@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "github": "git add . && git commit -m \"${npm_config_message}\" && git push -u origin master"
+    "github": "git add . && git commit -m \"Commit Message\" && git push -u origin master"
   },
   "eslintConfig": {
     "extends": [
