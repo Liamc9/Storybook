@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import AppCard from '../components/cards/AppCard';
 
 export default {
-  title: 'Components/Cards/AppCard',
+  title: 'Atoms/DisplayComponents/Cards/AppCard',
   component: AppCard,
   tags: ['autodocs'],
   decorators: [

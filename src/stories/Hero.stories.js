@@ -4,7 +4,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 
 export default {
-  title: 'Components/Hero',
+  title: 'Atoms/HeaderFooterComponents/Hero',
   component: Hero,
   tags: ['autodocs'],
   argTypes: {

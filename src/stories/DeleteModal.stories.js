@@ -4,7 +4,7 @@ import React from 'react';
 import DeleteModal from '../components/DeleteModal';
 
 export default {
-  title: 'Components/DeleteModal',
+  title: 'Atoms/DisplayComponents/Modal/DeleteModal',
   component: DeleteModal,
   tags: ['autodocs'],
   argTypes: {

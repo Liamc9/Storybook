@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Input from '../components/Input.jsx';
 
 export default {
-  title: 'Components/Input',
+  title: 'Atoms/FormComponents/Input',
   component: Input,
   tags: ['autodocs'],
   argTypes: {

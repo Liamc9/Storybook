@@ -4,7 +4,7 @@ import React from 'react';
 import Loader from '../components/Loader';
 
 export default {
-  title: 'Components/Loader',
+  title: 'Atoms/DisplayComponents/Loader/Loader',
   component: Loader,
   tags: ['autodocs'],
 };

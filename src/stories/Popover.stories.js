@@ -4,7 +4,7 @@ import React from 'react';
 import Popover from '../components/Popover';
 
 export default {
-  title: 'Components/Popover',
+  title: 'Atoms/DisplayComponents/Popover/Popover',
   component: Popover,
   tags: ['autodocs'],
 };

@@ -5,7 +5,7 @@ import CheckedItem from '../components/CheckedItem';
 import * as Icons from '../assets/Icons';
 
 export default {
-  title: 'Components/CheckedItem',
+  title: 'Atoms/FormComponents/Checkbox/CheckedItem',
   component: CheckedItem,
   tags: ['autodocs'],
   argTypes: {

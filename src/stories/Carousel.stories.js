@@ -4,7 +4,7 @@ import React from 'react';
 import ImageCarousel from '../components/ImageCarousel';
 
 export default {
-  title: 'Components/ImageCarousel',
+  title: 'Atoms/DisplayComponents/Carousel/ImageCarousel',
   component: ImageCarousel,
   tags: ['autodocs'],
   argTypes: {

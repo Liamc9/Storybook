@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Modal from '../components/Modal';
 
 export default {
-  title: 'Components/Modal',
+  title: 'Atoms/DislpayComponents/Modal/Modal',
   component: Modal,
   tags: ['autodocs'],
   argTypes: {

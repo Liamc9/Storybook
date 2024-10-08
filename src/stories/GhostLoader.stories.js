@@ -4,7 +4,7 @@ import React from 'react';
 import GhostLoader from '../components/GhostLoader';
 
 export default {
-  title: 'Components/GhostLoader',
+  title: 'Atoms/DisplayComponents/Loader/GhostLoader',
   component: GhostLoader,
   tags: ['autodocs'],
 };

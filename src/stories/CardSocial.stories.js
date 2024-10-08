@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import CardSocial from '../components/cards/CardSocial';
 
 export default {
-  title: 'Components/Cards/CardSocial',
+  title: 'Atoms/DisplayComponents/Cards/CardSocial',
   component: CardSocial,
   tags: ['autodocs'],
   decorators: [

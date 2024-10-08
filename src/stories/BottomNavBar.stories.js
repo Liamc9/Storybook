@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import BottomNavBar from '../components/navigation/BottomNavBar';
 
 export default {
-  title: 'Components/Navigation/BottomNavBar',
+  title: 'Molecules/NavigationComponents/NavBar/BottomNavBar',
   component: BottomNavBar,
   tags: ['autodocs'],
   decorators: [

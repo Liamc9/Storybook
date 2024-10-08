@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 /**
  * FileUpload allows users to upload files.
@@ -52,11 +51,6 @@ const FileUpload = ({ onFileUpload }) => {
       </label>
     </div>
   );
-};
-
-
-FileUpload.propTypes = {
-  onFileUpload: PropTypes.func,
 };
 
 export default FileUpload;

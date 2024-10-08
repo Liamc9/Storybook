@@ -4,7 +4,7 @@ import React from 'react';
 import Card2 from '../components/cards/Card2';
 
 export default {
-  title: 'Components/Cards/Card2',
+  title: 'Atoms/DisplayComponents/Cards/Card2',
   component: Card2,
   tags: ['autodocs'],
 };

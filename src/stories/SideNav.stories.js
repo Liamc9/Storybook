@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import SideNav from '../components/navigation/SideNav';
 
 export default {
-  title: 'Components/Navigation/SideNav',
+  title: 'Molecules/NavigationComponents/Sidebar/SideNav',
   component: SideNav,
   tags: ['autodocs'],
   decorators: [

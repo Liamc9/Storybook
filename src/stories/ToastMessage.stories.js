@@ -4,7 +4,7 @@ import React from 'react';
 import ToastMessage from '../components/ToastMessage';
 
 export default {
-  title: 'Components/ToastMessage',
+  title: 'Atoms/DisplayComponents/Toast/ToastMessage',
   component: ToastMessage,
   tags: ['autodocs'],
 };

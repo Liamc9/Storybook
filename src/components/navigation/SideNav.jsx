@@ -14,15 +14,15 @@ const SideNav = () => {
   return (
     <div className="relative">
       {/* Top bar */}
-      <div className="fixed top-0 left-0 right-0 h-16 bg-gray-900 text-gray-100 flex items-center justify-between px-4 z-50 shadow-md">
+      <div className="fixed top-0 left-0 right-0 h-16 w-min flex items-center justify-between px-4 z-50 ">
         <div className="flex flex-row gap-6">
           <button
-            className="text-white focus:outline-none focus:bg-gray-700"
+            className=""
             onClick={toggleSideNav}
           >
-            <MenuIcon className="w-6 h-6" />
+            <MenuIcon className="w-8 h-8" />
           </button>
-          <Link to="/home" className="text-3xl font-semibold">My Portfolio</Link>
+
         </div>
         
           
