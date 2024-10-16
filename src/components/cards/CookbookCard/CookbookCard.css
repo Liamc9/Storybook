@@ -1,0 +1,105 @@
+
+/* CSS */
+.modern-card-container-horizontal {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  align-items: stretch;
+  aspect-ratio: 3/1;
+}
+
+@media (max-width: 768px) {
+  .modern-card-container-horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.modern-card-container-horizontal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modern-image-container-horizontal {
+  flex: 0 0 40%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.modern-recipe-image-horizontal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.modern-image-container-horizontal::before {
+  content: "";
+  display: block;
+  padding-top: 75%; /* Maintain 4:3 aspect ratio for the image container */
+  background-color: #e2e8f0; /* Placeholder background color */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.modern-card-container-horizontal:hover .modern-recipe-image-horizontal {
+  transform: scale(1.05);
+}
+
+.modern-card-content-horizontal {
+  flex: 1;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modern-card-title-horizontal {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: #2d3748;
+}
+
+@media (min-width: 768px) {
+  .modern-card-title-horizontal {
+    font-size: 1.5rem;
+  }
+}
+
+.modern-card-subtitle-horizontal {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+}
+
+.modern-card-details-horizontal {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #718096;
+  flex-wrap: wrap;
+}
+
+.modern-card-detail {
+  background-color: #edf2f7;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}

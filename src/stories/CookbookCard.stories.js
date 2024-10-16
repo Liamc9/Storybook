@@ -1,36 +1,49 @@
 import React from 'react';
-import CookbookCard from '../components/cards/CookbookCard';
+import { BrowserRouter as Router } from 'react-router-dom';
+import CookbookCard from '../components/cards/CookbookCard/CookbookCard'; // Adjust the path to the actual location of your component
 
-// Default export for the Storybook
 export default {
-  title: 'Atoms/DisplayComponents/Cards/CookbookCard',  // The title for Storybook's sidebar
+  title: 'Atoms/DisplayComponents/Cards/CookbookCard',
   component: CookbookCard,
   tags: ['autodocs'],
 };
 
-// Template for rendering the component with props
-const Template = (args) => <CookbookCard {...args} />;
+// Default Story
+const Template = (args) => (
+  <Router>
+    <CookbookCard {...args} />
+  </Router>
+);
 
-// Default example story
 export const Default = Template.bind({});
 Default.args = {
-  title: 'Classic Lasagna',
-  imageUrl: 'https://www.mygfguide.com/wp-content/uploads/2020/11/lasagne-cover-image-scaled.jpg', // Placeholder image URL
-  videoUrl: 'https://youtu.be/8pOXD0qf7Uk', // Placeholder video URL
-  chef: 'Chef Mario',
-  time: '45 min',
-  cuisine: 'Italian',
-  likes: 120,
+  cookbook: {
+    chef: 'Gordon Ramsay',
+    cuisine: 'Italian',
+    title: 'Delicious Pasta Dishes',
+    imageUrl: 'https://www.indothainews.com/wp-content/uploads/2023/09/yrtyr_1024x1024.jpg',
+    numberOfRecipes: 10,
+  },
 };
 
-// Additional example story (you can create more like this)
-export const VeganRecipe = Template.bind({});
-VeganRecipe.args = {
-  title: 'Vegan Tacos',
-  imageUrl: 'https://via.placeholder.com/150', // Placeholder image URL
-  videoUrl: 'https://example.com/video', // Placeholder video URL
-  chef: 'Chef Lisa',
-  time: '30 min',
-  cuisine: 'Mexican',
-  likes: 200,
+export const Other = Template.bind({});
+Other.args = {
+  cookbook: {
+    chef: 'Jamie Oliver',
+    cuisine: 'Mexican',
+    title: 'Taco Fiesta',
+    imageUrl: 'https://img.jamieoliver.com/home/wp-content/uploads/2020/08/jamieskeepcookingfamilyfavourites.jpg?tr=w-665',
+    numberOfRecipes: 25,
+  },
+};
+
+export const Other2 = Template.bind({});
+Other2.args = {
+  cookbook: {
+    chef: 'Nigella Lawson',
+    cuisine: 'French',
+    title: 'Elegant Desserts',
+    imageUrl: 'https://pagesix.com/wp-content/uploads/sites/3/2013/09/lawson.jpg?quality=75&strip=all&w=744',
+    numberOfRecipes: 3,
+  },
 };
