@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import { ClockIcon, HeartIcon, ForkAndKnifeIcon } from '../../../assets/Icons';
 import './RecipeCard.css';
 
-export default function RecipeCard({ recipe }) {
+export default function RecipeCard({ recipe, onCardClick }) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const {
@@ -17,30 +17,45 @@ export default function RecipeCard({ recipe }) {
     profilePic,
   } = recipe;
 
-  const handleImageClick = () => {
-    setIsVideoPlaying(true); const videoElement = document.querySelector('.video-player'); if (videoElement) { videoElement.play(); }
+  const handleImageClick = (e) => {
+    e.stopPropagation(); // Prevent propagation to parent onClick
+    setIsVideoPlaying(true);
+    const videoElement = document.querySelector('.video-player video');
+    if (videoElement) {
+      videoElement.play();
+    }
   };
 
-  const handleVideoClick = () => {
+  const handleVideoClick = (e) => {
+    e.stopPropagation(); // Prevent propagation to parent onClick
     setIsVideoPlaying(false);
   };
 
   return (
-    <div className="card-container" onClick={isVideoPlaying ? handleVideoClick : handleImageClick}>
-      <div className="image-container">
+    <div className="card-container" onClick={onCardClick}>
+      <div
+        className="image-container"
+        onClick={isVideoPlaying ? handleVideoClick : handleImageClick}
+      >
         <div className="media-wrapper">
           {isVideoPlaying ? (
-            <ReactPlayer url={videoUrl} playing={isVideoPlaying} muted
+            <ReactPlayer
+              url={videoUrl}
+              playing={isVideoPlaying}
+              muted
               width="100%"
               height="100%"
               className="video-player"
+              config={{
+                file: {
+                  attributes: {
+                    playsInline: true,
+                  },
+                },
+              }}
             />
           ) : (
-            <img
-              src={imageUrl}
-              alt={title}
-              className="recipe-image"
-            />
+            <img src={imageUrl} alt={title} className="recipe-image" />
           )}
         </div>
         <div className="overlay">
