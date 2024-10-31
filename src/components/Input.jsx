@@ -1,69 +1,93 @@
-// src/components/Input.jsx
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 
-import React, { useState, useEffect } from 'react';
+const InputContainer = styled.div`
+  position: relative;
+  font-family: sans-serif;
+`;
 
-const Input = ({ name, type, value, onChange, colour, label }) => {
+const sharedInputStyles = css`
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 2px solid;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+`;
+
+const StyledInput = styled.input`
+  ${sharedInputStyles}
+  border-color: ${({ isFocused, color }) => (isFocused ? color : '#D1D5DB')};
+`;
+
+const StyledTextarea = styled.textarea`
+  ${sharedInputStyles}
+  border-color: ${({ isFocused, color }) => (isFocused ? color : '#D1D5DB')};
+`;
+
+const StyledLabel = styled.label`
+  position: absolute;
+  left: 0;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  background: white;
+  color: ${({ isFocused, color }) => (isFocused ? color : '#6B7280')};
+  font-size: 1rem;
+  pointer-events: none;
+  transform: ${({ hasValue, isFocused }) =>
+    hasValue || isFocused ? 'translate(1.25rem, -70%) scale(0.9)' : 'translate(0.625rem, 0)'};
+  transform-origin: left top;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+`;
+
+const Input = ({ name, type, value, onChange, color = '#000', label }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [renderKey, setRenderKey] = useState(0);
 
-  // Re-render the component when 'colour' changes
-  useEffect(() => {
-    if (isFocused) {
-      setRenderKey((prevKey) => prevKey + 1);
-    }
-  }, [colour, isFocused]);
-
-  const inputStyle = {
-    borderColor: isFocused ? colour : '#D1D5DB', // Default border color when not focused
-  };
-
-  const labelStyle = {
-    color: isFocused ? colour : '#6B7280', // Default label color when not focused
-  };
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = () => setIsFocused(false);
 
   const inputElement =
     type === 'textarea' ? (
-      <textarea
-        key={renderKey} // Use the key prop to force re-render
+      <StyledTextarea
         name={name}
         id={name}
         required
         value={value}
         onChange={onChange}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        className="peer w-full rounded-lg border-2 bg-transparent p-2 text-base outline-none"
-        style={inputStyle}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        isFocused={isFocused}
+        color={color}
       />
     ) : (
-      <input
-        key={renderKey} // Use the key prop to force re-render
+      <StyledInput
         name={name}
         id={name}
         type={type}
         required
         value={value}
         onChange={onChange}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        className="peer w-full rounded-lg border-2 bg-transparent p-2 text-base outline-none"
-        style={inputStyle}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        isFocused={isFocused}
+        color={color}
       />
     );
 
   return (
-    <div className="relative my-4 font-sans">
+    <InputContainer>
       {inputElement}
-      <label
+      <StyledLabel
         htmlFor={name}
-        className={`pointer-events-none absolute left-0 m-1 ml-2.5 transform bg-white p-1.5 text-base text-gray-500 transition-transform duration-300 ease-in-out peer-focus:ml-5 peer-focus:-translate-y-[70%] peer-focus:scale-90 peer-focus:px-1 peer-focus:py-0 ${
-          value ? 'ml-5 translate-y-[-70%] scale-90 px-1 py-0' : ''
-        }`}
-        style={labelStyle}
+        isFocused={isFocused}
+        color={color}
+        hasValue={Boolean(value)}
       >
         {label}
-      </label>
-    </div>
+      </StyledLabel>
+    </InputContainer>
   );
 };
 

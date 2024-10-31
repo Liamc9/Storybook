@@ -1,48 +1,125 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from "styled-components";
+
+// Styled Components
+const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  border-radius: 1.5rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+`;
+
+const ModalContent = styled.div`
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.75rem;
+  text-align: center;
+`;
+
+const Icon = styled.svg`
+  height: 3rem;
+  width: 3rem;
+  fill: #ef4444;
+  color: #4b5563;
+  margin: 0 auto;
+  &:hover {
+    animation: bounce 1s;
+  }
+`;
+
+const Title = styled.h2`
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+`;
+
+const Message = styled.p`
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #4b5563;
+`;
+
+const ButtonContainer = styled.div`
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
+const Button = styled.button`
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: medium;
+  transition: all 0.3s ease-in;
+  border: 2px solid;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const CancelButton = styled(Button)`
+  border-color: #d1d5db;
+  background-color: #e5e7eb;
+  color: #4b5563;
+  &:hover {
+    border-color: #9ca3af;
+    background-color: #d1d5db;
+  }
+`;
+
+const ConfirmButton = styled(Button)`
+  margin-left: 1rem;
+  border-color: #ef4444;
+  background-color: #ef4444;
+  color: white;
+  &:hover {
+    background-color: transparent;
+    color: #ef4444;
+  }
+`;
 
 // DeleteModal Component
 const DeleteModal = ({ onCancel, onConfirm, title, message }) => {
   return (
-    <div className="group relative flex w-[250px] select-none flex-col items-center justify-center rounded-2xl border border-gray-300 bg-white p-4 shadow-lg">
-      <div className="flex-auto justify-center p-3 text-center">
-        <svg
+    <ModalContainer>
+      <ModalContent>
+        <Icon
           fill="currentColor"
           viewBox="0 0 20 20"
-          className="mx-auto flex h-12 w-12 items-center fill-red-500 text-gray-600 group-hover:animate-bounce"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             clipRule="evenodd"
             d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
             fillRule="evenodd"
-          ></path>
-        </svg>
-        <h2 className="py-4 text-xl font-bold text-gray-800">
-          {title || "Are you sure?"}
-        </h2>
-        <p className="px-2 text-sm font-bold text-gray-600">
+          />
+        </Icon>
+        <Title>{title || "Are you sure?"}</Title>
+        <Message>
           {message ||
             "Do you really want to continue? This process cannot be undone."}
-        </p>
-      </div>
-      <div className="mt-2 space-x-1 p-2 text-center md:block">
-        <button
-          onClick={onCancel}
-          className="mb-2 rounded-full border-2 border-gray-300 bg-gray-200 px-5 py-2 text-sm font-medium tracking-wider text-gray-600 shadow-sm transition duration-300 ease-in hover:border-gray-400 hover:bg-gray-300 hover:shadow-lg md:mb-0"
-        >
-          Cancel
-        </button>
-        <button
-          onClick={onConfirm}
-          className="ml-4 rounded-full border-2 border-red-500 bg-red-500 px-5 py-2 text-sm font-medium tracking-wider text-white shadow-sm transition duration-300 ease-in hover:border-red-500 hover:bg-transparent hover:text-red-500 hover:shadow-lg"
-        >
-          Confirm
-        </button>
-      </div>
-    </div>
+        </Message>
+      </ModalContent>
+      <ButtonContainer>
+        <CancelButton onClick={onCancel}>Cancel</CancelButton>
+        <ConfirmButton onClick={onConfirm}>Confirm</ConfirmButton>
+      </ButtonContainer>
+    </ModalContainer>
   );
 };
-export default DeleteModal
 
-//**********************************
-
+export default DeleteModal;

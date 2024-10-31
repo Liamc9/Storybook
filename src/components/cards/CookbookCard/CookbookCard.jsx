@@ -1,17 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './CookbookCard.css';
 
-export default function CookbookCard({ cookbook }) {
+export default function CookbookCard({ cookbook, onCardClick }) {
   const { chef, cuisine, title, imageUrl, numberOfRecipes } = cookbook;
-  const navigate = useNavigate();
-
-  const handleCardClick = () => {
-    navigate(`/recipes/${title.replace(/\s+/g, '-').toLowerCase()}`);
-  };
 
   return (
-    <div className="modern-card-container-horizontal" onClick={handleCardClick}>
+    <div className="modern-card-container-horizontal" onClick={onCardClick}>
       <div className="modern-image-container-horizontal">
         <img
           src={imageUrl}

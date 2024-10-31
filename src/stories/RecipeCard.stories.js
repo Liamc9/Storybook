@@ -33,9 +33,9 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   recipe: {
-    title: 'Classic Lasagna',
+    title: 'Classic Lasagna with Chips and more',
     imageUrl: 'https://www.mygfguide.com/wp-content/uploads/2020/11/lasagne-cover-image-scaled.jpg', // Placeholder image URL
-   // videoUrl: 'https://youtu.be/8pOXD0qf7Uk', // Placeholder video URL
+   videoUrl: 'https://firebasestorage.googleapis.com/v0/b/cookbook-3f0ee.appspot.com/o/2620043-uhd_3840_2160_25fps.mp4?alt=media&token=c204d2ba-7415-4930-b324-7cc37180527b', // Placeholder video URL
     chef: 'Chef Mario',
     time: '45 min',
     cuisine: 'Italian',

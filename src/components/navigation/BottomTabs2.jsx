@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BottomTabs2 = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const textRefs = useRef([]);
   const [lineWidths, setLineWidths] = useState([]);
+  const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
     const updateLineWidths = () => {
@@ -22,47 +24,49 @@ const BottomTabs2 = ({ items }) => {
   const handleClick = (index) => {
     if (index === activeIndex) return;
     setActiveIndex(index);
+    if (items[index].path) {
+      navigate(items[index].path); // Navigate to the specified path
+    }
   };
 
   return (
     <>
-    <menu className="menu">
-      {items.map((item, index) => (
-        <button
-          key={index}
-          className={`menu__item ${activeIndex === index ? 'active' : ''}`}
-          onClick={() => handleClick(index)}
-          style={{ '--lineWidth': `${lineWidths[index] || 0}px` }}
-        >
-          <div className="menu__icon">
-            {React.cloneElement(item.icon, {
-              className: `${item.icon.props.className || ''} ${
-                activeIndex === index ? 'active' : ''
-              }`,
-            })}
-          </div>
-          <strong
-            className={`menu__text ${activeIndex === index ? 'active' : ''}`}
-            ref={(el) => (textRefs.current[index] = el)}
+      <menu className="menu">
+        {items.map((item, index) => (
+          <button
+            key={index}
+            className={`menu__item ${activeIndex === index ? 'active' : ''}`}
+            onClick={() => handleClick(index)}
+            style={{ '--lineWidth': `${lineWidths[index] || 0}px` }}
           >
-            {item.text}
-          </strong>
-        </button>
-      ))}
-    </menu>
-  
+            <div className="menu__icon">
+              {React.cloneElement(item.icon, {
+                className: `${item.icon.props.className || ''} ${
+                  activeIndex === index ? 'active' : ''
+                }`,
+              })}
+            </div>
+            <strong
+              className={`menu__text ${activeIndex === index ? 'active' : ''}`}
+              ref={(el) => (textRefs.current[index] = el)}
+            >
+              {item.text}
+            </strong>
+          </button>
+        ))}
+      </menu>
+
 
 
       {/* CSS Styles */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
 
         html {
           box-sizing: border-box;
           --duration: 0.45s;
           --cubic: cubic-bezier(0.4, 0, 0.2, 1);
           --color-1: #d5dadd;
-          --color-2: #51d5c2;
+          --color-2: #b99976;
         }
 
         *, *::before, *::after {
@@ -131,19 +135,6 @@ const BottomTabs2 = ({ items }) => {
           transition: transform var(--duration) var(--cubic);
         }
 
-        .menu__item::before {
-          top: 9%;
-          left: 18.4%;
-          width: 1.5em;
-          height: 1.5em;
-          content: " ";
-          position: absolute;
-          border-radius: 50%;
-          transform: scale(0);
-          transform-origin: center;
-          background-color: #fdecef;
-          transition: transform var(--duration) var(--cubic);
-        }
 
         .menu__item::after {
           left: 0;
