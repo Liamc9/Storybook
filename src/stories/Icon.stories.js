@@ -4,7 +4,7 @@ import React from 'react';
 import * as Icons from '../assets/Icons';
 
 export default {
-  title: 'Icons/Gallery',
+  title: 'Branding/Icons',
 };
 
 export const IconGallery = () => {
