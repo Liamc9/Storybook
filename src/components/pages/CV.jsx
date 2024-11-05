@@ -1,7 +1,7 @@
 // IMPORTS
 import React from 'react';
 import AccordionCard from '../cards/AccordionCard'
-import { BookOpenIcon } from '../../assets/Icons';
+import { BookOpenIcon } from '../icons/Icons';
 // CREATE FUNCTION
 export default function CV() {
     // STATE VARIABLES

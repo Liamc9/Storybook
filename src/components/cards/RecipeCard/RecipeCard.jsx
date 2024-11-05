@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
-import { ClockIcon, HeartIcon, ForkAndKnifeIcon, ArrowRightIcon, BookmarkIcon } from '../../../assets/Icons';
+import { ClockIcon, HeartIcon, ForkAndKnifeIcon, ArrowRightIcon, BookmarkIcon } from '../../icons/Icons';
 
 export default function RecipeCard({ recipe, onCardClick, chefLink }) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);

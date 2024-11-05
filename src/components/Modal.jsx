@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { XIcon } from "../assets/Icons";
+import { XIcon } from "./icons/Icons";
 
 // Modal Component
 const Modal = ({ isModalOpen, closeModal, height = 'h-96', width = 'w-96', children }) => {

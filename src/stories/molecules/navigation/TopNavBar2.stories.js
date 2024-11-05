@@ -1,7 +1,7 @@
 // src/stories/TopNavBar2.stories.jsx
 
 import React from 'react';
-import TopNavBar2 from '../../../components/TopNavBar2'; // Import your TopNavBar2 component
+import TopNavBar2 from '../../../components/navigation/TopNavBar2'; // Import your TopNavBar2 component
 import { MemoryRouter } from 'react-router-dom';
 
 // Default export to provide metadata

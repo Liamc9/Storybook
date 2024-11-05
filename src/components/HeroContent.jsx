@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ButtonArrowIcon } from "../assets/Icons";
+import { ButtonArrowIcon } from "./icons/Icons";
 
 const HeroContent = ({
   header,

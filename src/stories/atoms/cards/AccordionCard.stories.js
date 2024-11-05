@@ -1,7 +1,7 @@
 // IMPORTS
 import React from 'react';
 import AccordionCard from '../../../components/cards/AccordionCard';
-import { CollegeIcon, ChevronDownIcon, ChevronUpIcon } from '../../../assets/Icons';
+import { CollegeIcon, ChevronDownIcon, ChevronUpIcon } from 'liamc9npm';
 
 // DEFAULT EXPORT FOR STORYBOOK
 export default {

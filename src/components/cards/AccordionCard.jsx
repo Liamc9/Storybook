@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ChevronDownIcon, ChevronUpIcon, CollegeIcon } from '../../assets/Icons';
+import { ChevronDownIcon, ChevronUpIcon, CollegeIcon } from '../icons/Icons';
 
 // Styled components
 const AccordionWrapper = styled.div`

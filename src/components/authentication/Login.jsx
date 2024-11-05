@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Input } from 'liamc9npm';
-import { GoogleIcon, AppleIcon } from "../../assets/Icons";
+import { GoogleIcon, AppleIcon } from "../icons/Icons";
 
 const Container = styled.div`
   width: 100%;

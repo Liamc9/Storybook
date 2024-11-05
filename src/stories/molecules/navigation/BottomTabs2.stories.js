@@ -2,7 +2,7 @@
 
 import React from 'react';
 import BottomTabs2 from '../../../components/navigation/BottomTabs2';
-import { HomeIcon2, StrategyIcon, PeriodIcon, SecurityIcon, SettingsIcon } from '../../../assets/Icons';
+import { HomeIcon2, StrategyIcon, PeriodIcon, SecurityIcon, SettingsIcon } from '../../../components/icons/Icons';
 import { BrowserRouter } from 'react-router-dom';
 
 export default {

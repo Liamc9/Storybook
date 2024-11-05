@@ -2,7 +2,7 @@
 
 // IMPORTS
 import React from "react"
-import { InstagramIcon } from "../assets/Icons"
+import { InstagramIcon } from "./icons/Icons"
 // CREATE FUNCTION
 export default function SocialButtons() {
     // STATE VARIABLES

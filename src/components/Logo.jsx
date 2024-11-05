@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 // Import logo assets
-import primaryLogo from '../assets/logo-primary.png';
-import secondaryLogo from '../assets/logo-secondary.png';
+import primaryLogo from '../assets/logoprimary.png';
+import secondaryLogo from '../assets/logosecondary.png';
 import faviconLogo from '../assets/favicon.ico';
 
 const StyledImg = styled.img`

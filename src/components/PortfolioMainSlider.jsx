@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import TopNavBar2 from "./TopNavBar2";
+import TopNavBar2 from "./navigation/TopNavBar2";
 import HeroContent from "./HeroContent";
-import { ButtonArrowIcon } from "../assets/Icons";
+import { ButtonArrowIcon } from "./icons/Icons";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Card3 from "./cards/Card3";
 

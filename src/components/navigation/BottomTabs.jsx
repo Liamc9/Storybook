@@ -1,7 +1,7 @@
 // IMPORTS
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { UsersIcon, HomeIcon, SearchIcon } from "../../assets/Icons";
+import { UsersIcon, HomeIcon, SearchIcon } from "../icons/Icons";
 
 // CREATE FUNCTION
 export default function BottomTabs() {

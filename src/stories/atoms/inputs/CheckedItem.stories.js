@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import CheckedItem from '../../../components/CheckedItem';
-import * as Icons from '../../../assets/Icons';
+import * as Icons from 'liamc9npm';
 
 export default {
   title: 'Atoms/Inputs/CheckedItem',

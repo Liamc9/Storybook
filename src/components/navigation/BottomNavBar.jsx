@@ -1,6 +1,6 @@
 import React from 'react';	
 import { Link } from 'react-router-dom';
-import { MoneyIcon, HomeIcon, UsersIcon, CodeIcon, TargetIcon } from '../../assets/Icons';
+import { MoneyIcon, HomeIcon, UsersIcon, CodeIcon, TargetIcon } from '../icons/Icons';
 
 const BottomNavBar = () => (
   <div className="fixed inset-x-0 bottom-0 bg-white shadow-lg md:hidden">

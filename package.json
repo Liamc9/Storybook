@@ -11,7 +11,7 @@
     "@use-gesture/react": "^10.3.1",
     "classnames": "^2.5.1",
     "dragula": "^3.7.3",
-    "liamc9npm": "^1.0.57",
+    "liamc9npm": "^1.1.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-player": "^2.16.0",

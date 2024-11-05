@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FilterIcon } from "../../assets/Icons";
+import { FilterIcon } from "../icons/Icons";
 import Modal from "../Modal";
 
 const SearchFilters = ({ attributes, onFilterChange }) => {

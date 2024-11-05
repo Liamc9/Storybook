@@ -1,5 +1,5 @@
 import React from "react";
-import { SortIcon } from "../../assets/Icons";
+import { SortIcon } from "../icons/Icons";
 
 
 const SearchSort = ({ attributes, onSortChange }) => {

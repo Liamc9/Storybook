@@ -1,7 +1,7 @@
 // src/stories/IconGallery.stories.jsx
 
 import React from 'react';
-import * as Icons from '../../assets/Icons';
+import * as Icons from '../../components/icons/Icons';
 
 export default {
   title: 'Branding/Icons',
