@@ -1,19 +1,19 @@
-// src/stories/BottomTabs2.stories.jsx
+// src/stories/BottomNav2.stories.jsx
 
 import React from 'react';
-import BottomTabs2 from '../../../components/navigation/BottomTabs2';
+import BottomNav2 from '../../../components/navigation/BottomNav2';
 import { HomeIcon2, StrategyIcon, PeriodIcon, SecurityIcon, SettingsIcon } from '../../../components/icons/Icons';
 import { BrowserRouter } from 'react-router-dom';
 
 export default {
-  title: 'Molecules/Navigation/Tabs/BottomTabs2',
-  component: BottomTabs2,
+  title: 'Molecules/Navigation/Mobile/NavBar/BottomNav2',
+  component: BottomNav2,
   tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component: `
-The \`BottomTabs2\` component is a flexible and customizable navigation element designed to provide quick access to different sections of an application. It supports navigation with icons and text labels, making it suitable for mobile and web applications.
+The \`BottomNav2\` component is a flexible and customizable navigation element designed to provide quick access to different sections of an application. It supports navigation with icons and text labels, making it suitable for mobile and web applications.
 
 ### Features
 - **Icon and Text Integration**: Displays both icons and text for enhanced navigation cues.
@@ -25,12 +25,12 @@ The \`BottomTabs2\` component is a flexible and customizable navigation element 
 \`\`\`jsx
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import BottomTabs2 from './components/navigation/BottomTabs2';
+import BottomNav2 from './components/navigation/BottomNav2';
 import { HomeIcon2, StrategyIcon, PeriodIcon, SecurityIcon, SettingsIcon } from './assets/Icons';
 
 const ExampleComponent = () => (
   <BrowserRouter>
-    <BottomTabs2
+    <BottomNav2
       items={[
         { text: 'home', icon: <HomeIcon2 />, path: '/home' },
         { text: 'strategy', icon: <StrategyIcon />, path: '/strategy' },
@@ -55,7 +55,7 @@ export default ExampleComponent;
 
 const Template = (args) => (
   <BrowserRouter>
-    <BottomTabs2 {...args} />
+    <BottomNav2 {...args} />
   </BrowserRouter>
 );
 

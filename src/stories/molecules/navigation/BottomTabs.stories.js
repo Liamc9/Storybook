@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import BottomTabs from '../../../components/navigation/BottomTabs';
 
 export default {
-  title: 'Molecules/Navigation/Tabs/BottomTabs',
+  title: 'Molecules/Navigation/Mobile/Tabs/BottomTabs',
   component: BottomTabs,
   tags: ['autodocs'],
   parameters: {

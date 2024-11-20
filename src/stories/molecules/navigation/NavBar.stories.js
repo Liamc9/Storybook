@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import TopNavBar from '../../../components/navigation/TopNavBar';
 
 export default {
-  title: 'Molecules/Navigation/NavBar/TopNavBar',
+  title: 'Molecules/Navigation/Mobile/NavBar/TopNavBar',
   component: TopNavBar,
   tags: ['autodocs'],
   parameters: {

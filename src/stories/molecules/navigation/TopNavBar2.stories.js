@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 // Default export to provide metadata
 export default {
-  title: 'Molecules/Navigation/NavBar/TopNavBar2',
+  title: 'Molecules/Navigation/Computer/NavBar/TopNavBar2',
   component: TopNavBar2,
   tags: ['autodocs'],
   parameters: {

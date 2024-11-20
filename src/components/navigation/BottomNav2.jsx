@@ -104,7 +104,7 @@ const Icon = styled.div`
   stroke-miterlimit: 10;
 `;
 
-const BottomTabs2 = ({ items }) => {
+const BottomNav2 = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const textRefs = useRef([]);
   const [lineWidths, setLineWidths] = useState([]);
@@ -174,4 +174,4 @@ const BottomTabs2 = ({ items }) => {
 );
 };
 
-export default BottomTabs2;
+export default BottomNav2;
