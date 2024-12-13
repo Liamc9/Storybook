@@ -1,0 +1,54 @@
+"use strict";(self.webpackChunkstorybook=self.webpackChunkstorybook||[]).push([[7610],{"./src/stories/atoms/cards/AccordionCard.stories.js":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.r(__webpack_exports__),__webpack_require__.d(__webpack_exports__,{CustomIconAndTitle:()=>CustomIconAndTitle,CustomStyling:()=>CustomStyling,Default:()=>Default,NoGradeOrGPA:()=>NoGradeOrGPA,ShortDescription:()=>ShortDescription,__namedExportsOrder:()=>__namedExportsOrder,default:()=>__WEBPACK_DEFAULT_EXPORT__});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),_components_atoms_cards_AccordionCard__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./src/components/atoms/cards/AccordionCard.jsx"),liamc9npm__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/liamc9npm/dist/index.js");const __WEBPACK_DEFAULT_EXPORT__={title:"Atoms/Cards/AccordionCard",component:_components_atoms_cards_AccordionCard__WEBPACK_IMPORTED_MODULE_1__.A,tags:["autodocs"],parameters:{docs:{description:{component:'\n# AccordionCard Component\n\nThe `AccordionCard` component is used to display educational or experience information in an expandable card format. It supports toggling between open and closed states to show or hide additional details. This component is perfect for showcasing resumes, academic qualifications, or project experiences.\n\n### Features\n- **Customizable Icons**: Choose from predefined icons to customize the card header.\n- **Detailed Information**: Display titles, subtitles, institution names, and grades.\n- **Expandable Content**: Users can click to expand or collapse the detailed description.\n\n### Usage\n\n```jsx\nimport React from \'react\';\nimport AccordionCard from \'./components/cards/AccordionCard\';\nimport { CollegeIcon, ChevronDownIcon } from \'./assets/Icons\';\n\nconst ExampleComponent = () => (\n  <AccordionCard\n    icon={CollegeIcon}\n    title="Computer Science"\n    subtitle="Specialization in Machine Learning"\n    institution="Stanford University"\n    grade="Summa Cum Laude"\n    gpa="4.0"\n    description="An in-depth study into machine learning, including neural networks and data analysis techniques."\n  />\n);\n\nexport default ExampleComponent;\n```\n        '}}},argTypes:{icon:{control:"select",options:[liamc9npm__WEBPACK_IMPORTED_MODULE_2__.CollegeIcon,liamc9npm__WEBPACK_IMPORTED_MODULE_2__.ChevronDownIcon,liamc9npm__WEBPACK_IMPORTED_MODULE_2__.ChevronUpIcon],description:"Icon to display in the accordion card header."},title:{control:"text",description:"Main title of the accordion card."},subtitle:{control:"text",description:"Subtitle of the accordion card."},institution:{control:"text",description:"Institution or organization related to the card."},grade:{control:"text",description:"Grade information to display."},gpa:{control:"text",description:"GPA information to display."},description:{control:"text",description:"Detailed description shown when the accordion is expanded."}}},Template=args=>react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_atoms_cards_AccordionCard__WEBPACK_IMPORTED_MODULE_1__.A,args),Default=Template.bind({});Default.args={title:"Mechanical Engineering",subtitle:"Mechanical Engineering With Business",institution:"University College Dublin",grade:"1:1",gpa:"3.72",description:"This program combines advanced mechanical engineering concepts with business strategies, providing a comprehensive understanding that bridges technical and commercial domains."};const CustomIconAndTitle=Template.bind({});CustomIconAndTitle.args={icon:liamc9npm__WEBPACK_IMPORTED_MODULE_2__.ChevronDownIcon,title:"Computer Science",subtitle:"Specialization in Artificial Intelligence",institution:"Massachusetts Institute of Technology",grade:"Summa Cum Laude",gpa:"4.0",description:"Focused on AI development, covering machine learning, neural networks, and advanced algorithms. Completed a capstone project on reinforcement learning applied to robotics."};const ShortDescription=Template.bind({});ShortDescription.args={title:"Business Administration",subtitle:"MBA",institution:"Harvard Business School",grade:"Distinction",gpa:"3.9",description:"A two-year program focused on leadership, strategy, and innovation in the business world."};const NoGradeOrGPA=Template.bind({});NoGradeOrGPA.args={title:"Fine Arts",subtitle:"Painting and Sculpture",institution:"Royal Academy of Arts",description:"An in-depth study into classical and modern techniques of painting and sculpture. Led multiple exhibitions and received notable recognition for artwork.",grade:"",gpa:""};const CustomStyling=Template.bind({});CustomStyling.args={title:"Data Science",subtitle:"MSc in Data Analytics",institution:"Stanford University",grade:"High Honors",gpa:"3.85",description:"Explored various data science methodologies including predictive modeling, statistical analysis, and data visualization. Key project involved building a recommendation system."},CustomStyling.decorators=[Story=>react__WEBPACK_IMPORTED_MODULE_0__.createElement("div",{style:{maxWidth:"600px",margin:"0 auto",border:"2px solid #4CAF50",padding:"20px"}},react__WEBPACK_IMPORTED_MODULE_0__.createElement(Story,null))];const __namedExportsOrder=["Default","CustomIconAndTitle","ShortDescription","NoGradeOrGPA","CustomStyling"];Default.parameters={...Default.parameters,docs:{...Default.parameters?.docs,source:{originalSource:"args => <AccordionCard {...args} />",...Default.parameters?.docs?.source}}},CustomIconAndTitle.parameters={...CustomIconAndTitle.parameters,docs:{...CustomIconAndTitle.parameters?.docs,source:{originalSource:"args => <AccordionCard {...args} />",...CustomIconAndTitle.parameters?.docs?.source}}},ShortDescription.parameters={...ShortDescription.parameters,docs:{...ShortDescription.parameters?.docs,source:{originalSource:"args => <AccordionCard {...args} />",...ShortDescription.parameters?.docs?.source}}},NoGradeOrGPA.parameters={...NoGradeOrGPA.parameters,docs:{...NoGradeOrGPA.parameters?.docs,source:{originalSource:"args => <AccordionCard {...args} />",...NoGradeOrGPA.parameters?.docs?.source}}},CustomStyling.parameters={...CustomStyling.parameters,docs:{...CustomStyling.parameters?.docs,source:{originalSource:"args => <AccordionCard {...args} />",...CustomStyling.parameters?.docs?.source}}}},"./src/components/atoms/cards/AccordionCard.jsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>AccordionCard});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),styled_components__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_Branding_icons_Icons__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./src/components/Branding/icons/Icons.jsx");const AccordionWrapper=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+`,AccordionHeader=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  display: flex;
+  align-items: center;
+  border-left: 8px solid green;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+`,IconContainer=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  width: 112px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`,ContentContainer=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  flex-grow: 1;
+  padding: 16px;
+  
+`,Title=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.p`
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a202c;
+`,Subtitle=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.p`
+  font-size: 18px;
+  font-weight: medium;
+  color: #4a5568;
+`,Institution=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.p`
+  font-size: 16px;
+  font-weight: medium;
+  color: #2d3748;
+`,GradeContainer=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  width: 25%;
+  text-align: center;
+  padding-right: 16px;
+`,AccordionContent=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  max-height: ${props=>props.isOpen?"240px":"0"};
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+`,Description=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.p`
+  padding: 24px;
+  background-color: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  color: #4a5568;
+`;function AccordionCard(_ref){let{Icon=_Branding_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.CollegeIcon,title="ME",subtitle="Mechanical Engineering With Business",institution="University College Dublin",grade="1:1",gpa="3.72",description="This program combines advanced mechanical engineering concepts with business strategies, providing a comprehensive understanding that bridges technical and commercial domains. Key modules included Thermodynamics, Fluid Mechanics, Project Management, and Business Analytics. Achievements include leading a team project on sustainable energy solutions that received commendation from faculty."}=_ref;const[isOpen,setIsOpen]=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(!1);return react__WEBPACK_IMPORTED_MODULE_0__.createElement(AccordionWrapper,null,react__WEBPACK_IMPORTED_MODULE_0__.createElement(AccordionHeader,{onClick:()=>{setIsOpen(!isOpen)}},react__WEBPACK_IMPORTED_MODULE_0__.createElement(IconContainer,null,react__WEBPACK_IMPORTED_MODULE_0__.createElement(Icon,{size:80,color:"#38a169"})),react__WEBPACK_IMPORTED_MODULE_0__.createElement(ContentContainer,null,react__WEBPACK_IMPORTED_MODULE_0__.createElement(Title,null,title),react__WEBPACK_IMPORTED_MODULE_0__.createElement(Subtitle,null,subtitle),react__WEBPACK_IMPORTED_MODULE_0__.createElement(Institution,null,institution)),react__WEBPACK_IMPORTED_MODULE_0__.createElement(GradeContainer,null,react__WEBPACK_IMPORTED_MODULE_0__.createElement("p",null,"Grade: ",grade),react__WEBPACK_IMPORTED_MODULE_0__.createElement("p",null,"GPA: ",gpa),isOpen?react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Branding_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.ChevronUpIcon,{size:24,color:"#718096"}):react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Branding_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.ChevronDownIcon,{size:24,color:"#718096"}))),react__WEBPACK_IMPORTED_MODULE_0__.createElement(AccordionContent,{isOpen},react__WEBPACK_IMPORTED_MODULE_0__.createElement(Description,null,description)))}}}]);
+//# sourceMappingURL=stories-atoms-cards-AccordionCard-stories.f54d5610.iframe.bundle.js.map
