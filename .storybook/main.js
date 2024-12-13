@@ -15,8 +15,10 @@ const config = {
     options: {},
   },
   
-  staticDirs: ["..\\public"],
+  staticDirs: ["../public"],
   webpackFinal: async (config) => {
+    config.output.publicPath = '/Storybook/';
+
     // Remove existing rules for JavaScript files if necessary
     config.module.rules = config.module.rules.filter(
       (rule) => !(rule.test && rule.test.toString().includes('jsx'))
