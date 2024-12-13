@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Settings from '../../components/pages/Settings';
-import { UserIcon2, NotificationsIcon, MoneyIcon } from '../../components/icons/Icons';
+import { UserIcon2, NotificationsIcon, MoneyIcon } from '../../components/Branding/icons/Icons';
 
 export default {
   title: 'Pages/Settings',

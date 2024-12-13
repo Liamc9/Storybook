@@ -1,7 +1,7 @@
 // src/stories/ToastMessage.stories.jsx
 
 import React from 'react';
-import ToastMessage from '../../../components/ToastMessage';
+import ToastMessage from '../../../components/atoms/other/ToastMessage';
 
 export default {
   title: 'Atoms/Other/ToastMessage',

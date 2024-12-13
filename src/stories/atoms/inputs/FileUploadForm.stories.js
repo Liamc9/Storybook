@@ -1,7 +1,7 @@
 // src/stories/FileUploadForm.stories.jsx
 
 import React from 'react';
-import FileUpload from '../../../components/FileUpload';
+import FileUpload from '../../../components/atoms/inputs/FileUpload';
 
 export default {
   title: 'Atoms/Inputs/FileUpload',

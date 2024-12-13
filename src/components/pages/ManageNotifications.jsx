@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { doc, updateDoc } from "firebase/firestore"; // Uncomment this for Firebase
 // import { db } from "./firebaseConfig"; // Uncomment this for Firebase
 import EditStackedList from "../molecules/stackedlist/EditStackedList";
-import { ChevronLeftIcon } from "../icons/Icons";
+import { ChevronLeftIcon } from "../Branding/icons/Icons";
 import { Link } from "react-router-dom";
 
 const ManageNotifications = () => {

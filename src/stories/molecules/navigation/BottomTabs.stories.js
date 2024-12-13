@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import BottomTabs from '../../../components/navigation/BottomTabs';
+import BottomTabs from '../../../components/molecules/navigation/BottomTabs';
 
 export default {
   title: 'Molecules/Navigation/Mobile/Tabs/BottomTabs',

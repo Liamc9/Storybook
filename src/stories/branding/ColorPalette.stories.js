@@ -1,5 +1,5 @@
 import React from 'react';
-import ColorPalette from '../../components/ColorPalette';
+import ColorPalette from '../../components/Branding/ColorPalette';
 import styled from 'styled-components';
 
 const Container = styled.div`

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserIcon2, MailIcon, PhoneIcon } from '../../../components/icons/Icons';
+import { UserIcon2, MailIcon, PhoneIcon } from '../../../components/Branding/icons/Icons';
 import UneditableTextField from '../../../components/atoms/menuitem/UneditableTextField';
 
 export default {

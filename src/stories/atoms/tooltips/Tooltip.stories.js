@@ -1,7 +1,7 @@
 // src/stories/Tooltip.stories.jsx
 
 import React from 'react';
-import Tooltip from '../../../components/Tooltip';
+import Tooltip from '../../../components/atoms/tooltips/Tooltip';
 
 export default {
   title: 'Atoms/Tooltips/Tooltip',

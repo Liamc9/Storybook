@@ -1,7 +1,7 @@
 // src/stories/GhostLoader.stories.jsx
 
 import React from 'react';
-import GhostLoader from '../../../components/GhostLoader';
+import GhostLoader from '../../../components/atoms/loaders/GhostLoader';
 
 export default {
   title: 'Atoms/Loaders/GhostLoader',

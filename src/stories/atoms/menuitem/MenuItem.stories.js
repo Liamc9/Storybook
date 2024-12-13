@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuItem from '../../../components/atoms/menuitem/MenuItem';
 import { BrowserRouter } from 'react-router-dom';
-import { UsersIcon, NotificationsIcon } from '../../../components/icons/Icons';
+import { UsersIcon, NotificationsIcon } from '../../../components/Branding/icons/Icons';
 
 export default {
   title: 'Atoms/MenuItem/MenuItem',

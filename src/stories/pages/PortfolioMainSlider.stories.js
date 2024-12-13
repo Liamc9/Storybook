@@ -1,7 +1,7 @@
 // src/stories/PortfolioMainSlider.stories.jsx
 
 import React from 'react';
-import PortfolioMainSlider from '../../components/PortfolioMainSlider';
+import PortfolioMainSlider from '../../components/pages/PortfolioMainSlider';
 
 export default {
   title: 'Pages/PortfolioMainSlider',

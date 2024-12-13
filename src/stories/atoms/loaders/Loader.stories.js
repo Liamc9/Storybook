@@ -1,7 +1,7 @@
 // src/stories/Loader.stories.jsx
 
 import React from 'react';
-import Loader from '../../../components/Loader';
+import Loader from '../../../components/atoms/loaders/Loader';
 
 export default {
   title: 'Atoms/Loaders/Loader',

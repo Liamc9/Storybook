@@ -1,7 +1,7 @@
 // src/stories/SocialButtons.stories.jsx
 
 import React from 'react';
-import SocialButtons from '../../../components/SocialButtons';
+import SocialButtons from '../../../components/atoms/other/SocialButtons';
 
 // Storybook metadata configuration
 export default {

@@ -1,7 +1,7 @@
 // src/stories/CardProduct.stories.jsx
 
 import React from 'react';
-import CardProduct from '../../../components/cards/CardProduct';
+import CardProduct from '../../../components/atoms/cards/CardProduct';
 
 export default {
   title: 'Atoms/Cards/CardProduct',

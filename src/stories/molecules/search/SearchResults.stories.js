@@ -1,8 +1,8 @@
 // src/stories/SearchResults.stories.jsx
 
 import React from 'react';
-import SearchResults from '../../../components/search/SearchResults'; // Adjust path as needed
-import CardProduct from '../../../components/cards/CardProduct'; // Adjust path as needed
+import SearchResults from '../../../components/molecules/search/SearchResults'; // Adjust path as needed
+import CardProduct from '../../../components/atoms/cards/CardProduct'; // Adjust path as needed
 
 export default {
   title: 'Molecules/Search/SearchResults',

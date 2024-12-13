@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../../../components/CustomButton';
+import CustomButton from '../../../components/atoms/buttons/CustomButton';
 
 // Default export to define the story's metadata
 export default {

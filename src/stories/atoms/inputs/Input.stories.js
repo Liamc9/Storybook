@@ -1,7 +1,7 @@
 // src/stories/Input.stories.jsx
 
 import React, { useState } from 'react';
-import Input from '../../../components/Input.jsx';
+import Input from '../../../components/atoms/inputs/Input.jsx';
 
 export default {
   title: 'Atoms/Inputs/Input',

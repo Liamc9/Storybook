@@ -1,42 +1,50 @@
 // src/stories/Modal.stories.jsx
 
-import React, { useState } from 'react';
-import Modal from '../../../components/Modal';
+import React, { useState } from "react";
+import Modal from "../../../components/atoms/modals/Modal";
 
 export default {
-  title: 'Atoms/Modals/Modal',
+  title: "Atoms/Modals/Modal",
   component: Modal,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
         component: `
-The \`Modal\` component is a flexible, reusable dialog box used to display content overlaying the main page content. It can be customized with various height and width properties and supports user-triggered opening and closing.
+The \`Modal\` component is a reusable and customizable dialog box for displaying content overlaying the main page. It includes built-in features like animations, accessibility, and a close button.
 
 ### Features
-- **Customizable Dimensions**: Allows control over the modal's height and width.
-- **User Interaction**: Includes built-in functions to open and close the modal.
-- **Versatile Content**: Can hold any JSX elements, making it adaptable for various use cases.
+
+- **Customizable Dimensions**: Set the height and width of the modal as needed.
+- **Animations**: Includes a fade-in and slide-in animation for smooth transitions.
+- **Accessibility**: Fully ARIA-compliant for screen readers.
+- **Click Outside to Close**: Clicking outside the modal closes it.
+- **Keyboard Navigation**: Supports closing via the \`Escape\` key.
 
 ### Usage
 
 \`\`\`jsx
-import React, { useState } from 'react';
-import Modal from './components/Modal';
+import React, { useState } from "react";
+import Modal from "./components/Modal";
 
 const ExampleComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClose = () => {
     setIsModalOpen(false);
-    console.log('Modal closed');
+    console.log("Modal closed");
   };
 
   return (
     <>
       <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
-      <Modal isModalOpen={isModalOpen} closeModal={handleClose} height="h-96" width="w-96">
-        <p>This is a modal content.</p>
+      <Modal
+        isModalOpen={isModalOpen}
+        closeModal={handleClose}
+        title="Example Modal"
+        animate
+      >
+        <p>This is the content of the modal. It can be anything you want!</p>
       </Modal>
     </>
   );
@@ -49,10 +57,11 @@ export default ExampleComponent;
     },
   },
   argTypes: {
-    isModalOpen: { control: 'boolean', description: 'Controls whether the modal is open.' },
-    height: { control: 'text', description: 'Sets the height of the modal.' },
-    width: { control: 'text', description: 'Sets the width of the modal.' },
-    closeModal: { action: 'closeModal', description: 'Function triggered when the modal is closed.' },
+    isModalOpen: { control: "boolean", description: "Controls whether the modal is open." },
+    title: { control: "text", description: "Title of the modal." },
+    animate: { control: "boolean", description: "Enable or disable animations." },
+    closeModal: { action: "closeModal", description: "Function triggered when the modal is closed." },
+    children: { control: "text", description: "Content to display inside the modal." },
   },
 };
 
@@ -66,9 +75,14 @@ const Template = (args) => {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="px-4 py-2 bg-blue-600 text-white rounded"
+      >
+        Open Modal
+      </button>
       <Modal {...args} isModalOpen={isOpen} closeModal={handleClose}>
-        <p>This is a modal content.</p>
+        {args.children || <p>This is a modal content.</p>}
       </Modal>
     </>
   );
@@ -77,6 +91,7 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   isModalOpen: false,
-  height: 'h-96',
-  width: 'w-96',
+  title: "Example Modal",
+  animate: true,
+  children: "This is a modal content.",
 };

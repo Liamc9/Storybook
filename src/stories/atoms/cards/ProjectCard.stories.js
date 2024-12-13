@@ -1,7 +1,7 @@
 // src/stories/ProjectCard.stories.jsx
 
 import React from 'react';
-import ProjectCard from '../../../components/cards/ProjectCard'; // Adjust the path to where your ProjectCard component is located
+import ProjectCard from '../../../components/atoms/cards/ProjectCard'; // Adjust the path to where your ProjectCard component is located
 
 export default {
   title: 'Atoms/Cards/ProjectCard',

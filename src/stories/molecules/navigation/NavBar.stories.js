@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import TopNavBar from '../../../components/navigation/TopNavBar';
+import TopNavBar from '../../../components/molecules/navigation/TopNavBar';
 
 export default {
   title: 'Molecules/Navigation/Mobile/NavBar/TopNavBar',

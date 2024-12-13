@@ -1,7 +1,7 @@
 // src/stories/Footer.stories.jsx
 
 import React from 'react';
-import Footer from '../../../components/Footer';
+import Footer from '../../../components/molecules/other/Footer';
 
 export default {
   title: 'Molecules/Other/Footer',

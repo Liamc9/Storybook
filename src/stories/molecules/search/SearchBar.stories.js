@@ -1,7 +1,7 @@
 // src/stories/SearchBar.stories.jsx
 
 import React from 'react';
-import SearchBar from '../../../components/search/SearchBar';
+import SearchBar from '../../../components/molecules/search/SearchBar';
 
 // Define a default export with the component's metadata
 export default {

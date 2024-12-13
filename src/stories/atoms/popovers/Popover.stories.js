@@ -1,7 +1,7 @@
 // src/stories/Popover.stories.jsx
 
 import React from 'react';
-import Popover from '../../../components/Popover';
+import Popover from '../../../components/atoms/popovers/Popover';
 
 export default {
   title: 'Atoms/Popovers/Popover',

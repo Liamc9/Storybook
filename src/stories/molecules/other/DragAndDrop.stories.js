@@ -1,7 +1,7 @@
 // src/stories/DragAndDrop.stories.jsx
 
 import React from 'react';
-import DragAndDrop from '../../../components/DragAndDrop';
+import DragAndDrop from '../../../components/molecules/other/DragAndDrop';
 
 // Default export for Storybook autodocs
 export default {

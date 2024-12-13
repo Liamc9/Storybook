@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import AppCard from '../../../components/cards/AppCard';
+import AppCard from '../../../components/atoms/cards/AppCard';
 
 export default {
   title: 'Atoms/Cards/AppCard',

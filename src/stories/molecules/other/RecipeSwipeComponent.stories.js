@@ -1,7 +1,7 @@
 // src/stories/RecipeSwipeComponent.stories.jsx
 
 import React from 'react';
-import RecipeSwipeComponent from '../../../components/RecipeSwipeComponent';
+import RecipeSwipeComponent from '../../../components/molecules/other/RecipeSwipeComponent';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'swiper/css';
 

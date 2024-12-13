@@ -1,7 +1,7 @@
 // src/stories/ProgressBar.stories.js
 
 import React from 'react';
-import ProgressBar from '../../../components/ProgressBar';
+import ProgressBar from '../../../components/atoms/other/ProgressBar';
 
 export default {
   title: 'Atoms/Other/ProgressBar',

@@ -1,7 +1,7 @@
 // src/stories/Typography.stories.jsx
 
 import React from 'react';
-import { H1, H2, BodyText, Caption } from '../../components/Typography';
+import { H1, H2, BodyText, Caption } from '../../components/Branding/Typography';
 
 /**
  * Meta configuration for the Typography story.

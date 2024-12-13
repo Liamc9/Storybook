@@ -1,8 +1,8 @@
 // src/stories/BottomNav2.stories.jsx
 
 import React from 'react';
-import BottomNav2 from '../../../components/navigation/BottomNav2';
-import { HomeIcon2, StrategyIcon, PeriodIcon, SecurityIcon, SettingsIcon } from '../../../components/icons/Icons';
+import BottomNav2 from '../../../components/molecules/navigation/BottomNav2';
+import { HomeIcon2, StrategyIcon, PeriodIcon, SecurityIcon, SettingsIcon } from '../../../components/Branding/icons/Icons';
 import { BrowserRouter } from 'react-router-dom';
 
 export default {

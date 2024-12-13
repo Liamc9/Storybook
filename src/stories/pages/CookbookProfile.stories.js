@@ -1,7 +1,7 @@
 // src/stories/CookbookProfile.stories.jsx
 
 import React from 'react';
-import CookbookProfile from '../../components/CookbookProfile';
+import CookbookProfile from '../../components/pages/CookbookProfile';
 import { action } from '@storybook/addon-actions';
 
 // Example data for the chef's profile

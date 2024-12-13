@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import TopWSideNav from '../../../components/navigation/TopWSideNav';
-import { MenuIcon, CogIcon, LoginIcon } from '../../../components/icons/Icons';
+import TopWSideNav from '../../../components/molecules/navigation/TopWSideNav';
+import { MenuIcon, CogIcon, LoginIcon } from '../../../components/Branding/icons/Icons';
 
 export default {
   title: 'Molecules/Navigation/Mobile/NavBar/TopWSideNav',

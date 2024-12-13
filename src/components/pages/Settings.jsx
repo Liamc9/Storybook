@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StackedList from '../molecules/stackedlist/StackedList';
-import { ChevronLeftIcon } from '../icons/Icons';
+import { ChevronLeftIcon } from '../Branding/icons/Icons';
 
 const SettingsPage = styled.div`
   display: flex;

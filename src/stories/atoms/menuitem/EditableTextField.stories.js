@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import EditableTextField from '../../../components/atoms/menuitem/EditableTextField';
-import { UserIcon2 } from '../../../components/icons/Icons';
+import { UserIcon2 } from '../../../components/Branding/icons/Icons';
 
 export default {
   title: 'Atoms/MenuItem/EditableTextField',

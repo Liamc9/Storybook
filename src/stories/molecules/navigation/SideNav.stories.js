@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import SideNav from '../../../components/navigation/SideNav';
+import SideNav from '../../../components/molecules/navigation/SideNav';
 
 export default {
   title: 'Molecules/Navigation/Computer/Sidebar/SideNav',

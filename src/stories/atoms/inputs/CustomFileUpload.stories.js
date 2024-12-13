@@ -1,7 +1,7 @@
 // src/stories/CustomFileUpload.stories.js
 
 import React from 'react';
-import CustomFileUpload from '../../../components/CustomFileUpload';
+import CustomFileUpload from '../../../components/atoms/inputs/CustomFileUpload';
 
 export default {
   title: 'Atoms/Inputs/CustomFileUpload',

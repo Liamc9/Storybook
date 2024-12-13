@@ -1,6 +1,6 @@
 import React from "react";
-import BottomNav from "../../../components/navigation/BottomNav"; // Adjust the path to your BottomNav component
-import { HomeIcon, SearchIcon2, UserIcon2 } from "../../../components/icons/Icons";
+import BottomNav from "../../../components/molecules/navigation/BottomNav"; // Adjust the path to your BottomNav component
+import { HomeIcon, SearchIcon2, UserIcon2 } from "../../../components/Branding/icons/Icons";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const navItems = [

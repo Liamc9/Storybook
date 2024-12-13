@@ -1,7 +1,7 @@
 // src/stories/SearchSort.stories.jsx
 
 import React, { useState } from 'react';
-import SearchSort from '../../../components/search/SearchSort';
+import SearchSort from '../../../components/molecules/search/SearchSort';
 
 // Define a default export with the component's metadata
 export default {

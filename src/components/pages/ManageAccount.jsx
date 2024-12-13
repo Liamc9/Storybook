@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ChevronLeftIcon, UserIcon2 } from '../icons/Icons';
+import { ChevronLeftIcon, UserIcon2 } from '../Branding/icons/Icons';
 import EditStackedList from '../molecules/stackedlist/EditStackedList';
 
 // Styled Components

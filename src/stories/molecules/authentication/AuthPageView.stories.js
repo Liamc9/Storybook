@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthPageView from '../../../components/authentication/AuthPageView';
+import AuthPageView from '../../../components/pages/authentication/AuthPageView';
 import styled from 'styled-components';
 
 const Container = styled.div`

@@ -1,6 +1,6 @@
 // IMPORTS
 import React, { useState } from 'react';
-import BottomDrawer from '../../../components/Drawers/BottomDrawer';
+import BottomDrawer from '../../../components/atoms/Drawers/BottomDrawer';
 
 // Default export to define the component for Storybook
 export default {
@@ -16,6 +16,16 @@ The \`BottomDrawer\` component is a versatile drawer that slides up from the bot
 ### Features
 - **Controlled Component**: Takes \`isOpen\` and \`onClose\` props for full control.
 - **Flexible Content**: You can place any JSX elements inside it.
+- **Customizable**: Adjust transition duration, drawer height, and max width using props.
+- **Dynamic Height**: Supports both fixed height and automatic height based on content.
+
+### Props
+- \`isOpen\`: Controls whether the drawer is open or closed.
+- \`onClose\`: Callback triggered when the drawer is closed.
+- \`transitionDuration\`: Sets the transition duration for opening/closing the drawer (in milliseconds).
+- \`height\`: Specifies the height of the drawer (can be a percentage or fixed value).
+- \`autoHeight\`: If true, the drawer height adjusts automatically to fit its content.
+- \`maxWidth\`: Sets the maximum width of the drawer.
 
 ### Usage
 
@@ -39,7 +49,13 @@ const ExampleComponent = () => {
       </button>
 
       {/* Bottom Drawer Component */}
-      <BottomDrawer isOpen={isDrawerOpen} onClose={closeDrawer}>
+      <BottomDrawer
+        isOpen={isDrawerOpen}
+        onClose={closeDrawer}
+        transitionDuration={300}
+        height="50%"
+        maxWidth="600px"
+      >
         <h2 className="text-xl font-bold mb-4">Drawer Content</h2>
         <p className="text-gray-700">
           This is the content inside the drawer. You can place any elements here, such as forms, navigation links, or information.
@@ -64,6 +80,10 @@ export default ExampleComponent;
   argTypes: {
     isOpen: { control: 'boolean' },
     onClose: { action: 'closed' },
+    transitionDuration: { control: 'number', defaultValue: 300 },
+    height: { control: 'text', defaultValue: '80vh' },
+    autoHeight: { control: 'boolean', defaultValue: false },
+    maxWidth: { control: 'text', defaultValue: '600px' },
   },
 };
 
@@ -91,7 +111,14 @@ const Template = (args) => {
       </button>
 
       {/* Bottom Drawer Component */}
-      <BottomDrawer isOpen={isDrawerOpen} onClose={closeDrawer}>
+      <BottomDrawer
+        isOpen={isDrawerOpen}
+        onClose={closeDrawer}
+        transitionDuration={args.transitionDuration}
+        height={args.height}
+        autoHeight={args.autoHeight}
+        maxWidth={args.maxWidth}
+      >
         <h2 className="text-xl font-bold mb-4">Drawer Content</h2>
         <p className="text-gray-700">
           This is the content inside the drawer. You can place any elements here, such as forms, navigation links, or information.
@@ -111,4 +138,8 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   isOpen: false,
+  transitionDuration: 300,
+  height: '80vh',
+  autoHeight: false,
+  maxWidth: '600px',
 };

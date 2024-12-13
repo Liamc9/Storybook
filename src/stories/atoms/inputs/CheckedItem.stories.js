@@ -1,7 +1,7 @@
 // src/stories/CustomCheckbox.stories.jsx
 
 import React, { useState } from 'react';
-import CheckedItem from '../../../components/CheckedItem';
+import CheckedItem from '../../../components/atoms//inputs/CheckedItem';
 import * as Icons from 'liamc9npm';
 
 export default {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import CardSocial from '../../../components/cards/CardSocial';
+import CardSocial from '../../../components/atoms/cards/CardSocial';
 
 export default {
   title: 'Atoms/Cards/CardSocial',

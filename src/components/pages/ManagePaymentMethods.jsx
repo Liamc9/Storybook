@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ChevronRightIcon } from "../icons/Icons";
+import { ChevronRightIcon } from "../Branding/icons/Icons";
 // Atoms
 const Button = styled.button`
   background-color: #007bff;

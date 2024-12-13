@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SelectField from '../../../components/atoms/menuitem/SelectField';
-import { UserIcon2 } from '../../../components/icons/Icons';
+import { UserIcon2 } from '../../../components/Branding/icons/Icons';
 
 export default {
   title: 'Atoms/MenuItem/SelectField',

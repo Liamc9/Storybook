@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { ChevronUpDownIcon } from '../../icons/Icons';
+import { ChevronUpDownIcon } from '../../Branding/icons/Icons';
 
 const FieldContainer = styled.div`
   display: flex;
@@ -49,7 +49,6 @@ const ChevronWrapper = styled.div`
 
 const SelectField = ({ name, value, options, onChange, placeholder = 'Select value...' }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [currentValue, setCurrentValue] = useState(value || '');
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
@@ -58,7 +57,6 @@ const SelectField = ({ name, value, options, onChange, placeholder = 'Select val
 
   const handleSelectChange = (e) => {
     const newValue = e.target.value;
-    setCurrentValue(newValue);
     setIsDropdownOpen(false);
     onChange(newValue);
   };
@@ -77,12 +75,20 @@ const SelectField = ({ name, value, options, onChange, placeholder = 'Select val
     };
   }, []);
 
+  // Find the label for the current value
+  const getLabelForValue = (val) => {
+    const option = options.find((opt) =>
+      typeof opt === 'object' ? opt.value === val : opt === val
+    );
+    return typeof option === 'object' ? option.label : option;
+  };
+
   return (
     <FieldContainer ref={dropdownRef}>
       <FieldName>{name}</FieldName>
       {isDropdownOpen ? (
         <Dropdown
-          value={currentValue}
+          value={value}
           onChange={handleSelectChange}
           autoFocus
           onBlur={() => setIsDropdownOpen(false)}
@@ -90,14 +96,22 @@ const SelectField = ({ name, value, options, onChange, placeholder = 'Select val
           <option value="" disabled>
             {placeholder}
           </option>
-          {options.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
+          {options.map((option) =>
+            typeof option === 'object' ? (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ) : (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            )
+          )}
         </Dropdown>
       ) : (
-        <FieldValue onClick={toggleDropdown}>{currentValue || placeholder}</FieldValue>
+        <FieldValue onClick={toggleDropdown}>
+          {value ? getLabelForValue(value) : placeholder}
+        </FieldValue>
       )}
       <ChevronWrapper onClick={toggleDropdown}>
         <ChevronUpDownIcon className="w-6 h-6" />

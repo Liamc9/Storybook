@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRightIcon } from '../../icons/Icons';
+import { ChevronRightIcon } from '../../Branding/icons/Icons';
 import styled from 'styled-components';
 
 const StyledLink = styled(Link)`

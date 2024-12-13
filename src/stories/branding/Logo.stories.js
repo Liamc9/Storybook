@@ -1,7 +1,7 @@
 // src/components/Logo/Logo.stories.js
 
 import React from 'react';
-import Logo from '../../components/Logo';
+import Logo from '../../components/Branding/Logo';
 import styled from 'styled-components';
 
 // Optionally, wrap the logo in a styled container for better presentation

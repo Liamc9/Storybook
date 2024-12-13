@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import StackedList from '../../../components/molecules/stackedlist/StackedList';
-import { UsersIcon, NotificationsIcon } from '../../../components/icons/Icons';
+import { UsersIcon, NotificationsIcon } from '../../../components/Branding/icons/Icons';
 
 export default {
   title: 'Molecules/StackedList/StackedList',

@@ -1,6 +1,6 @@
 import React from 'react';
 import EditStackedList from '../../../components/molecules/stackedlist/EditStackedList';
-import { UserIcon2 } from '../../../components/icons/Icons';
+import { UserIcon2 } from '../../../components/Branding/icons/Icons';
 
 export default {
   title: 'Molecules/StackedList/EditStackedList',

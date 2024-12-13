@@ -1,7 +1,7 @@
 // src/stories/SearchFilters.stories.jsx
 
 import React, { useState } from 'react';
-import SearchFilters from '../../../components/search/SearchFilters';
+import SearchFilters from '../../../components/molecules/search/SearchFilters';
 
 // Define a default export with the component's metadata
 export default {

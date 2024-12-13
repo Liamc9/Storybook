@@ -1,7 +1,7 @@
 // src/stories/Hero.stories.jsx
 
 import React from 'react';
-import Hero from '../../../components/Hero';
+import Hero from '../../../components/molecules/other/Hero';
 
 export default {
   title: 'Molecules/Other/Hero',
