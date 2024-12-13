@@ -28,12 +28,9 @@ const NavItem = styled(NavLink)`
   font-size: 0.875rem;
 
   &.active {
-    color: #2563eb;
+    color: #a855f7;
   }
 
-  &:hover {
-    color: #1d4ed8;
-  }
 
   svg {
     width: 24px;

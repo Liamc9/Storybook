@@ -1,24 +1,134 @@
-import React, { useState } from 'react';
-// CustomCheckbox Component
-const CheckedItem = ({ label, svg, onChange, checked }) => {
+import React from "react";
+import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
+
+// Styled Components
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 91.666667%; /* Equivalent to w-11/12 */
+  margin: 0 auto;
+  user-select: none;
+  gap: 1rem;
+  max-width: 500px;
+`;
+
+const Label = styled.label`
+  color: #94a3b8; /* Equivalent to text-slate-400 */
+  position: relative;
+  cursor: pointer;
+`;
+
+const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+  height: 1px;
+  width: 1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+`;
+
+const StyledSpan = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 3px solid #cbd5e1; /* Equivalent to border-slate-300 */
+  background-color: #ffffff; /* bg-white */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  transition: all 0.2s ease-in-out;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+
+  /* Checked State */
+  ${HiddenCheckbox}:checked + & {
+    border-color: ${({ color }) => color || "#3b82f6"}; /* Default to blue-500 */
+    box-shadow: 0 4px 6px ${({ color }) => color}33; /* 10% opacity */
+    color: ${({ color }) => color || "#3b82f6"};
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      top: 0.25rem;
+      left: 0.25rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 3px solid ${({ color }) => color || "#3b82f6"};
+      border-radius: 50%;
+      background-color: ${({ color }) => color || "#3b82f6"};
+      opacity: 1;
+      transform: scale(1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.75rem;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  /* Hover State */
+  &:hover {
+    border-color: ${({ color }) => color || "#3b82f6"};
+
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Pseudo-element before */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 3px solid ${({ color }) => color || "#3b82f6"};
+    border-radius: 50%;
+    background-color: ${({ color }) => color || "#3b82f6"};
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* SVG and Label Text */
+  > span {
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    font-size: 0.875rem; /* Equivalent to text-sm */
+  }
+`;
+
+// Component
+
+const CheckedItem = ({
+  label,
+  svg,
+  onChange,
+  checked,
+  height = "7rem",
+  width = "7rem",
+  color = "#3b82f6", // Default to blue-500
+}) => {
   return (
-    <div className="flex flex-wrap justify-center items-center w-11/12 mx-auto select-none gap-2 max-w-[500px]">
-      <label className="text-slate-400 relative cursor-pointer">
-        <input
-          type="checkbox"
-          className="h-[1px] opacity-0 overflow-hidden absolute whitespace-nowrap w-[1px] peer"
-          onChange={onChange}
-          checked={checked}
-        />
-        <span className="peer-checked:border-blue-500 peer-checked:shadow-blue-500/10 peer-checked:text-blue-500 peer-checked:before:border-blue-500 peer-checked:before:bg-blue-500 peer-checked:before:opacity-100 peer-checked:before:scale-100 peer-checked:before:content-['✓'] flex flex-col items-center justify-center w-28 min-h-[7rem] rounded-lg shadow-lg transition-all duration-200 border-slate-300 border-[3px] bg-white before:absolute before:block before:w-5 before:h-5 before:border-[3px] before:rounded-full before:top-1 before:left-1 before:opacity-0 before:transition-transform before:scale-0 before:text-white before:text-xs before:flex before:items-center before:justify-center hover:border-blue-500 hover:before:scale-100 hover:before:opacity-100">
-          <span className="transition-all duration-100">
-            {svg}
-          </span>
-          <span className="transition-all duration-300 text-center">{label}</span>
-        </span>
-      </label>
-    </div>
+    <Container>
+      <Label>
+        <HiddenCheckbox onChange={onChange} checked={checked} />
+        <StyledSpan height={height} width={width} color={color}>
+          <span>{svg}</span>
+          <span>{label}</span>
+        </StyledSpan>
+      </Label>
+    </Container>
   );
 };
-export default CheckedItem
 
+
+export default CheckedItem;

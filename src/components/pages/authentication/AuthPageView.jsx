@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import { Input } from "liamc9npm";
-import { GoogleIcon, AppleIcon } from "../../Branding/icons/Icons";
+import { GoogleIcon, LettzIcon } from "../../Branding/icons/Icons";
 
 const AuthPageView = ({
   email,
   setEmail,
   password,
   setPassword,
-  username,
-  setUsername,
   reenterPassword,
   setReenterPassword,
   error,
   isSignupComplete,
+  setIsSignupComplete, // Add this prop to toggle the signup state
   isLoading,
   termsAccepted,
   setTermsAccepted,
@@ -24,8 +23,7 @@ const AuthPageView = ({
   onForgotPassword,
   resetEmailSent,
   onGoogleSignIn,
-  onAppleSignIn,
-  themeColor = "#B08B5B",
+  themeColor = "#A855F7",
 }) => {
   if (isSignupComplete) {
     return (
@@ -36,30 +34,29 @@ const AuthPageView = ({
           activate your account.
         </p>
         <ButtonWrapper>
-          <Button themeColor={themeColor} onClick={() => setShowSignUp(false)}>Return to Login</Button>
+          {/* Reset the signup state to show the login view */}
+          <Button
+            themeColor={themeColor}
+            onClick={() => {
+              setIsSignupComplete(false); // Reset the signup complete state
+              setShowSignUp(false); // Switch to login view
+            }}
+          >
+            Return to Login
+          </Button>
         </ButtonWrapper>
       </Container>
     );
   }
-
   return (
     <Container>
-      <Title>{isSignUp ? "Sign up to CookBook to get started!" : "Sign in to CookBook"}</Title>
+      <IconWrapper1>
+        <LettzIconStyled themeColor={themeColor} />
+      </IconWrapper1>
+      <Title>{isSignUp ? "Sign up to Lettz to get started!" : "Sign in to Lettz"}</Title>
       {resetEmailSent && <Message>A password reset email has been sent to {email}.</Message>}
       {error && <Message error>{error}</Message>}
       <Form onSubmit={isSignUp ? handleSignup : handleLogin}>
-        {isSignUp && (
-          <Input
-            name="username"
-            id="username"
-            type="text"
-            label="Username"
-            color={themeColor}
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        )}
         <Input
           name="email"
           id="email"
@@ -129,12 +126,6 @@ const AuthPageView = ({
         </IconWrapper>
         Sign in with Google
       </OAuthButton>
-      <OAuthButton apple onClick={onAppleSignIn}>
-        <IconWrapper>
-          <AppleIcon />
-        </IconWrapper>
-        Sign in with Apple
-      </OAuthButton>
       <LoginWrapper>
         <p>
           {isSignUp ? "Already have an account?" : "Don't have an account?"} {" "}
@@ -144,6 +135,7 @@ const AuthPageView = ({
     </Container>
   );
 };
+
 
 export default AuthPageView;
 
@@ -159,13 +151,25 @@ const Container = styled.div`
   }
 `;
 
+const IconWrapper1 = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const LettzIconStyled = styled(LettzIcon)`
+  width: 50px;
+  height: 50px;
+  color: ${(props) => props.themeColor}; /* Apply themeColor to currentColor */
+`;
+
 const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   color: #1f2937;
-  text-align: left;
+  text-align: center;
   margin-bottom: 20px;
 `;
+
 
 const Message = styled.p`
   margin: 10px 0;
@@ -214,9 +218,7 @@ const Button = styled.button`
   padding: 12px;
   font-weight: 500;
   cursor: pointer;
-  &:hover {
-    background-color: ${(props) => darkenColor(props.themeColor)};
-  }
+
   &:disabled {
     background-color: #d3d3d3;
     cursor: not-allowed;
@@ -282,9 +284,9 @@ const OAuthButton = styled.button`
   border: none;
   width: 100%;
   border-radius: 30px;
-  border: ${(props) => (props.apple ? "2px solid #000" : "2px solid #ccc")};
-  background-color: ${(props) => (props.apple ? "#000" : "#fff")};
-  color: ${(props) => (props.apple ? "#fff" : "#000")};
+  border:  2px solid #ccc;
+  background-color:  #fff;
+  color:  #000;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -294,7 +296,7 @@ const OAuthButton = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: ${(props) => (props.apple ? "#333" : "#ccc")};
+    background-color: #ccc;
   }
   &:not(:last-child) {
     margin-bottom: 10px;
@@ -312,13 +314,3 @@ const IconWrapper = styled.span`
   }
 `;
 
-// Helper function to darken color
-const darkenColor = (color) => {
-  // Simple function to darken a color by 10%
-  const num = parseInt(color.slice(1), 16),
-    amt = Math.round(2.55 * -10),
-    R = (num >> 16) + amt,
-    G = (num >> 8 & 0x00FF) + amt,
-    B = (num & 0x0000FF) + amt;
-  return "#" + (0x1000000 + (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 + (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 + (B < 255 ? (B < 1 ? 0 : B) : 255)).toString(16).slice(1).toUpperCase();
-};

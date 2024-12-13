@@ -1,3 +1,5 @@
+// src/components/cards/ImageCarousel2.jsx
+
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -8,28 +10,29 @@ import { Pagination, A11y } from "swiper/modules";
 
 const ImageContainer = styled.div`
   width: 100%;
+  height: 100%; /* Ensure the container takes full height of its parent */
   position: relative;
   overflow: hidden;
-  aspect-ratio: 5 / 4;
   margin: 0;
 
+  /* Swiper Pagination customization */
   .swiper-pagination {
-    position: absolute;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* Remove transform since flex handles centering */
   }
 
   .swiper-pagination-bullet {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.5);
     width: 10px;
     height: 10px;
     opacity: 1;
     margin: 0 5px;
     border-radius: 50%;
+    transition: background 0.3s ease;
   }
 
   .swiper-pagination-bullet-active {
@@ -37,17 +40,22 @@ const ImageContainer = styled.div`
   }
 
   .swiper-slide img {
+    width: 100%;
     height: 100%;
-    width: auto;
     object-fit: cover;
     display: block;
   }
 `;
 
-const ImageCarousel = ({ images }) => {
+const SwiperWrapper = styled(Swiper)`
+  width: 100%;
+  height: 100%; /* Ensure Swiper takes full height */
+`;
+
+const ImageCarousel2 = ({ images }) => {
   return (
     <ImageContainer>
-      <Swiper
+      <SwiperWrapper
         modules={[Pagination, A11y]}
         spaceBetween={0}
         slidesPerView={1}
@@ -56,19 +64,16 @@ const ImageCarousel = ({ images }) => {
       >
         {images.map((imgUrl, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={imgUrl}
-              alt={`Image ${index + 1}`}
-            />
+            <img src={imgUrl} alt={`Image ${index + 1}`} />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </SwiperWrapper>
     </ImageContainer>
   );
 };
 
-ImageCarousel.propTypes = {
+ImageCarousel2.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default ImageCarousel;
+export default ImageCarousel2;

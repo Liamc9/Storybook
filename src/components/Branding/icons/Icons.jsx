@@ -187,6 +187,83 @@ export const MoneyIcon = ({ className }) => (
   </svg>
 );
 
+export const MoneyIcon2 = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <g clipPath="url(#clip0_443_3628)">
+      <rect
+        x="2"
+        y="6"
+        width="20"
+        height="12"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></rect>
+      <path
+        d="M22 10C21.4747 10 20.9546 9.89654 20.4693 9.69552C19.984 9.4945 19.543 9.19986 19.1716 8.82843C18.8001 8.45699 18.5055 8.01604 18.3045 7.53073C18.1035 7.04543 18 6.52529 18 6L22 6L22 10Z"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+      <path
+        d="M18 18C18 16.9391 18.4214 15.9217 19.1716 15.1716C19.9217 14.4214 20.9391 14 22 14L22 18L18 18Z"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+      <path
+        d="M2 14C3.06087 14 4.07828 14.4214 4.82843 15.1716C5.57857 15.9217 6 16.9391 6 18L2 18L2 14Z"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+      <path
+        d="M6 6C6 7.06087 5.57857 8.07828 4.82843 8.82843C4.07828 9.57857 3.06087 10 2 10L2 6H6Z"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+      <path
+        d="M14.0741 9.5H11.3333C10.597 9.5 10 10.0596 10 10.75C10 11.4404 10.597 12 11.3333 12H13.1111C13.8475 12 14.4444 12.5596 14.4444 13.25C14.4444 13.9404 13.8475 14.5 13.1111 14.5H10"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+      <path
+        d="M12 9.51733V8.5"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+      <path
+        d="M12 15.5173V14.5"
+        stroke="currentColor"
+        strokeWidth="1.416"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </g>
+    <defs>
+      <clipPath id="clip0_443_3628">
+        <rect width="24" height="24" fill="white"></rect>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+
 export const MarketingIcon = ({ className }) => (
   <svg
     className={className}
@@ -988,3 +1065,231 @@ export const ChevronUpDownIcon = ({ className }) => (
     <path d="M18.3174 7.88675C18.708 7.49623 18.708 6.86307 18.3174 6.47254L13.4252 1.58509C12.644 0.804698 11.3783 0.805008 10.5975 1.58579L5.70711 6.47615C5.31658 6.86667 5.31658 7.49984 5.70711 7.89036C6.09763 8.28089 6.7308 8.28089 7.12132 7.89036L11.307 3.70472C11.6975 3.31419 12.3307 3.31419 12.7212 3.70472L16.9032 7.88675C17.2937 8.27728 17.9269 8.27728 18.3174 7.88675Z" />
   </svg>
 );
+
+export const PlusIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path
+      d="M4 12H20M12 4V20"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const TrashIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M14 10V17M10 10V17"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const CalendarIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <rect x="3" y="4" width="18" height="17" rx="2" ry="2" stroke="currentColor" strokeWidth="2" />
+    <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" strokeWidth="2" />
+    <line x1="8" y1="4" x2="8" y2="2" stroke="currentColor" strokeWidth="2" />
+    <line x1="16" y1="4" x2="16" y2="2" stroke="currentColor" strokeWidth="2" />
+  </svg>
+);
+
+export const LettzIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="42.135 129.213 281.601 273.175"
+    fill="currentColor"
+  >
+    <g>
+      <rect
+        x="57.584"
+        y="141.502"
+        width="53.371"
+        height="243.68"
+        rx="3.511"
+        ry="3.511"
+        fill="currentColor"
+      />
+    </g>
+    <g>
+      <g>
+        <rect
+          x="58.288"
+          y="331.812"
+          width="251.404"
+          height="54.775"
+          rx="2.809"
+          ry="2.809"
+          fill="currentColor"
+        />
+      </g>
+    </g>
+    <rect
+      x="124.298"
+      y="143.61"
+      width="182.584"
+      height="54.073"
+      rx="2.809"
+      ry="2.809"
+      fill="currentColor"
+    />
+    <rect
+      x="126.404"
+      y="267.205"
+      width="182.584"
+      height="49.86"
+      rx="3.511"
+      ry="3.511"
+      fill="currentColor"
+    />
+    <path
+      d="M306.18 143.609L304.775 198.385C304.775 202.986 125 315.66 125 315.66L125.702 265.098L306.18 143.609Z"
+      fill="currentColor"
+      fillRule="nonzero"
+    />
+  </svg>
+);
+
+
+export const EditIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path
+      d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+    />
+    <polygon
+      fill="none"
+      points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+    />
+  </svg>
+);
+
+
+export const LocationIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    ></path>
+    <path
+      d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    ></path>
+  </svg>
+);
+
+export const HomeIcon3 = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <polyline
+      points="21 12 12 3 3 12"
+      style={{
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: "1.5",
+      }}
+    ></polyline>
+    <path
+      d="M19,10V20.3a.77.77,0,0,1-.83.7H14.3V14.1H9.7V21H5.83A.77.77,0,0,1,5,20.3V10"
+      style={{
+        fill: "none",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: "1.5",
+      }}
+    ></path>
+  </svg>
+);
+
+
+export const UserIcon3 = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"
+      stroke="currentColor"
+      strokeWidth="2"
+    ></path>
+    <path
+      d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    ></path>
+  </svg>
+);
+
+export const ChatIcon = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M7 9H17M7 13H17M21 20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20Z"
+      stroke="currentColor"
+      strokeWidth="1.464"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    ></path>
+  </svg>
+);
+
+

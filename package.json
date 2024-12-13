@@ -31,7 +31,10 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "github": "git add . && git commit -m \"Commit Message\" && git push -u origin master"
+    "github": "git add . && git commit -m \"Commit Message\" && git push -u origin master",
+
+      "deploy-storybook": "gh-pages -d storybook-static"
+    
   },
   "eslintConfig": {
     "extends": [
@@ -76,6 +79,7 @@
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "eslint-plugin-storybook": "^0.8.0",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",
     "prettier": "^3.3.3",
