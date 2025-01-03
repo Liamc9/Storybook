@@ -17,8 +17,6 @@ const config = {
   
   staticDirs: ["../public"],
   webpackFinal: async (config) => {
-    config.output.publicPath = '/Storybook/';
-
     // Remove existing rules for JavaScript files if necessary
     config.module.rules = config.module.rules.filter(
       (rule) => !(rule.test && rule.test.toString().includes('jsx'))
@@ -46,6 +44,7 @@ const config = {
     config.plugins = config.plugins.filter(
       (plugin) => plugin.constructor.name !== 'ReactRefreshWebpackPlugin'
     );
+
 
     return config;
   },

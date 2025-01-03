@@ -60,7 +60,7 @@ const SearchDrawer = ({
 
   // Filter searchResults based on query
   const filteredResults = searchResults.filter((result) =>
-    result.title.toLowerCase().includes(query.toLowerCase())
+    result.title.includes(query)
   );
 
   return (
