@@ -26,7 +26,11 @@ const preview = {
       },
     },
   },
-  decorators: [addModalRoot], // Add the decorator globally
+
+  // Add the decorator globally
+  decorators: [addModalRoot],
+
+  tags: ['autodocs']
 };
 
 export default preview;

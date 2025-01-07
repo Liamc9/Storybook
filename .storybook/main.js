@@ -1,6 +1,7 @@
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+
   addons: [
     "@storybook/preset-create-react-app",
     "@storybook/addon-onboarding",
@@ -9,13 +10,16 @@ const config = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
+    "@storybook/addon-mdx-gfm"
   ],
+
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  
+
   staticDirs: ["../public"],
+
   webpackFinal: async (config) => {
     // Remove existing rules for JavaScript files if necessary
     config.module.rules = config.module.rules.filter(
@@ -48,5 +52,11 @@ const config = {
 
     return config;
   },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 export default config;
