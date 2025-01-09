@@ -3,7 +3,7 @@ import ListingCard from "../../../components/Lettz/components/ListingCard";
 import { BrowserRouter } from "react-router-dom";
 
 export default {
-  title: "Lettz/Components/ListingCard",
+  title: "Projects/Lettz/Components/ListingCard",
   tags: ["autodocs"],
   component: ListingCard,
   tags: ["autodocs"],

@@ -14,7 +14,7 @@ const sampleUserData = {
 };
 
 export default {
-  title: 'Cookbook/Views/CookbookProfile',
+  title: 'Projects/Cookbook/Views/CookbookProfile',
   tags: ['autodocs'],
   component: CookbookProfile,
   parameters: {

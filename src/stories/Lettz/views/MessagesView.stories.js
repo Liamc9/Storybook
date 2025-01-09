@@ -3,7 +3,7 @@ import MessagesView from "../../../components/Lettz/views/MessagesView";
 import { BrowserRouter as Router } from "react-router-dom";
 
 export default {
-  title: "Lettz/Views/MessagesView",
+  title: "Projects/Lettz/Views/MessagesView",
   tags: ["autodocs"],
   component: MessagesView,
   parameters: {

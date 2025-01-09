@@ -2,7 +2,7 @@ import React from "react";
 import RoomsView from "../../../components/Lettz/views/RoomsView";
 import { BrowserRouter } from "react-router-dom";
 export default {
-  title: "Lettz/Views/RoomsView",
+  title: "Projects/Lettz/Views/RoomsView",
   component: RoomsView,
   tags: ["autodocs"],
   parameters: {

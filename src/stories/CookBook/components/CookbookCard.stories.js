@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import CookbookCard from '../../../components/CookBook/components/CookbookCard'; // Adjust the path to the actual location of your component
 
 export default {
-  title: 'CookBook/Components/CookbookCard',
+  title: 'Projects/CookBook/Components/CookbookCard',
   component: CookbookCard,
   tags: ['autodocs'],
   parameters: {

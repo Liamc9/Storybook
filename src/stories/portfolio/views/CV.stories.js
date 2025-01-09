@@ -4,7 +4,7 @@ import React from 'react';
 import CV from '../../../components/portfolio/views/CV';
 
 export default {
-  title: 'Portfolio/Views/CV',
+  title: 'Projects/Portfolio/Views/CV',
   component: CV,
   tags: ['autodocs'],
   parameters: {

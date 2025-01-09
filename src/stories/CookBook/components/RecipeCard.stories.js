@@ -5,7 +5,7 @@ import RecipeCard from '../../../components/CookBook/components/RecipeCard'; // 
 import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
-  title: 'CookBook/Components/RecipeCard',
+  title: 'Projects/CookBook/Components/RecipeCard',
   component: RecipeCard,
   tags: ['autodocs'],
   parameters: {

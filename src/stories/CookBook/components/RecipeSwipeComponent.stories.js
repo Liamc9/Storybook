@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'swiper/css';
 
 export default {
-  title: 'Cookbook/Components/RecipeSwipeComponent',
+  title: 'Projects/Cookbook/Components/RecipeSwipeComponent',
   component: RecipeSwipeComponent,
   tags: ['autodocs'],
   parameters: {

@@ -2,7 +2,7 @@ import React from "react";
 import LettzFilterDrawer from "../../../components/Lettz/components/LettzFilterDrawer";
 
 export default {
-  title: "Lettz/Components/LettzFilterDrawer",
+  title: "Projects/Lettz/Components/LettzFilterDrawer",
   component: LettzFilterDrawer,
   tags: ["autodocs"],
   parameters: {

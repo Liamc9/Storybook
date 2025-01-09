@@ -5,7 +5,7 @@ import PortfolioMainSlider from '../../../components/portfolio/views/PortfolioMa
 import { BrowserRouter } from 'react-router-dom';
 
 export default {
-  title: 'Portfolio/Views/PortfolioMainSlider',
+  title: 'Projects/Portfolio/Views/PortfolioMainSlider',
   component: PortfolioMainSlider,
   tags: ['autodocs'],
   parameters: {

@@ -4,7 +4,7 @@ import React from 'react';
 import PollItem from '../../../components/disdat/components/PollItem';
 
 export default {
-  title: 'DisDat/Components/PollItem',
+  title: 'Projects/DisDat/Components/PollItem',
   component: PollItem,
   tags: ['autodocs'],
   parameters: {

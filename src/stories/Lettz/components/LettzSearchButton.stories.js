@@ -2,7 +2,7 @@ import React from "react";
 import LettzSearchButton from "../../../components/Lettz/components/LettzSearchButton";
 
 export default {
-  title: "Lettz/Components/LettzSearchButton",
+  title: "Projects/Lettz/Components/LettzSearchButton",
   component: LettzSearchButton,
   tags: ["autodocs"],
   parameters: {

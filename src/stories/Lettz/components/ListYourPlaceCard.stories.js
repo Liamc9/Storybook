@@ -2,7 +2,7 @@ import React from "react";
 import ListYourPlaceCard from "../../../components/Lettz/components/ListYourPlaceCard";
 import { BrowserRouter } from "react-router-dom";
 export default {
-  title: "Lettz/Components/ListYourPlace",
+  title: "Projects/Lettz/Components/ListYourPlace",
   tags: ["autodocs"],
   component: ListYourPlaceCard,
   tags: ["autodocs"],

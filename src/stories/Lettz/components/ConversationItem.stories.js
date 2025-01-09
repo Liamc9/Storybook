@@ -2,7 +2,7 @@ import React from "react";
 import ConversationItem from "../../../components/Lettz/components/ConversationItem";
 import { BrowserRouter as Router } from "react-router-dom";
 export default {
-  title: "Lettz/Components/ConversationItem",
+  title: "Projects/Lettz/Components/ConversationItem",
   tags: ["autodocs"],
   component: ConversationItem,
   tags: ["autodocs"],

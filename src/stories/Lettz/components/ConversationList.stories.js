@@ -4,7 +4,7 @@ import React from 'react';
 import ConversationList from '../../../components/Lettz/components/ConversationList';
 import { BrowserRouter } from 'react-router-dom';
 export default {
-  title: 'Lettz/Components/ConversationList',
+  title: 'Projects/Lettz/Components/ConversationList',
   component: ConversationList,
   tags: ['autodocs'],   
   parameters: {
