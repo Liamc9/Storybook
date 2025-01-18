@@ -4,6 +4,7 @@ import Feed from '../../components/search/Feed';
 import FeedItem2 from '../../components/search/FeedItem2'; // New FeedItem2 component
 import Filter from '../../components/search/Filter';
 import Sort from '../../components/search/Sort';
+import Search2 from '../../components/search/Search2'; // Updated import
 
 export default {
   title: 'Search/SearchView/SearchView',
@@ -19,149 +20,15 @@ The \`Feed\` component is designed to render a collection of items, automaticall
 - A custom \`ItemComponent\` to specify how each item is rendered.
 - Optional \`selectedFilters\` for filtering and \`sortBy\` logic for sorting.
 
-This story demonstrates seven scenarios for the \`Feed\` component:
-
-1. **Plain Unsorted Feed**: A basic feed without filtering or sorting.
-2. **Plain Feed with Custom Item Component (\`FeedItem2\`)**: A feed that uses a custom item component.
-3. **Filterable Feed**: A feed with dynamic filtering capabilities.
-4. **Sortable Feed**: A feed with dynamic sorting capabilities.
-5. **Feed with Both Filtering and Sorting**: A feed that supports both filtering and sorting simultaneously.
-6. **Predefined Sorting Feed**: A feed with sorting logic applied automatically.
-7. **Predefined Filtering Feed**: A feed with filtering logic applied automatically.
-
-#### Props
-- \`items\`: An array of objects representing the data to be displayed.
-- \`ItemComponent\`: The React component used to render each item (defaults to \`FeedItem\`).
-- \`selectedFilters\`: An object representing active filters to apply.
-- \`sortBy\`: A function used to sort the items.
-
----
-
-#### 1. Plain Unsorted Feed
-
-This example shows a basic feed rendering the default \`FeedItem\` component for each item without any filtering or sorting.
-
-\`\`\`jsx
-<Feed items={sampleItems} ItemComponent={FeedItem2}/>
-\`\`\`
-
----
-
-#### 2. Filterable Feed
-
-This example shows a feed with dynamic filtering capabilities. The active filters are managed via the \`selectedFilters\` state.
-
-\`\`\`jsx
-<Filter onChange={setSelectedFilters} />
-<Feed items={sampleItems} selectedFilters={selectedFilters} ItemComponent={FeedItem2}/>
-\`\`\`
-
----
-
-#### 3. Sortable Feed
-
-This example demonstrates dynamic sorting capabilities. The sorted items are managed via the \`sortedItems\` state.
-
-\`\`\`jsx
-<Sort items={sampleItems} onSortedChange={setSortedItems} />
-<Feed items={sortedItems} ItemComponent={FeedItem2}/>
-\`\`\`
-
----
-
-#### 4. Feed with Both Filtering and Sorting
-
-This example shows a feed with both filtering and sorting capabilities, combining the logic from the previous two examples.
-
-\`\`\`jsx
-<Filter onChange={setSelectedFilters} />
-<Sort items={sampleItems} onSortedChange={setSortedItems} />
-<Feed items={sortedItems} selectedFilters={selectedFilters} ItemComponent={FeedItem2}/>
-\`\`\`
-
----
-
-#### 5. Predefined Sorting Feed
-
-This example applies predefined sorting logic (by date descending) to the items automatically.
-
-\`\`\`jsx
-<Feed items={sortedItems} ItemComponent={FeedItem2}/>
-\`\`\`
-
----
-
-#### 6. Predefined Filtering Feed
-
-This example applies predefined filtering logic (only show completed tasks) to the items automatically.
-
-\`\`\`jsx
-<Feed items={filteredItems} ItemComponent={FeedItem2}/>
-\`\`\`
-
-#### 5. SearchView component with styling
-
-This example shows a feed with both filtering and sorting capabilities, combining the logic from the previous two examples.
-
-\`\`\`jsx
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Feed, FeedItem } from 'liamc9npm';
-import Filter from '../components/search/Filter';
-import Sort from '../components/search/Sort';
-
-const sampleItems = [
-  { title: 'Task 1', description: 'Do this', status: 'completed', priority: 'high', date: '2023-08-20' },
-  { title: 'Task 2', description: 'Do that', status: 'pending', priority: 'medium', date: '2023-08-22' },
-  { title: 'Task 3', description: 'Another task', status: 'completed', priority: 'low', date: '2023-08-21' },
-  { title: 'Task 4', description: 'Yet another task', status: 'inProgress', priority: 'medium', date: '2023-08-23' },
-];
-
-// Styled components
-const SearchViewContainer = styled.div\`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-\`;
-
-const FilterContainer = styled.div\`
-  width: 100%;
-  margin-bottom: 20px;
-\`;
-
-const SortContainer = styled.div\`
-  width: 100%;
-  margin-bottom: 20px;
-\`;
-
-const FeedContainer = styled.div\`
-  width: 100%;
-\`;
-
-export const SearchView = () => {
-  const [selectedFilters, setSelectedFilters] = useState({});
-  const [sortedItems, setSortedItems] = useState(sampleItems);
-
-  return (
-    <SearchViewContainer>
-      <FilterContainer>
-        <Filter onChange={setSelectedFilters} />
-      </FilterContainer>
-      <SortContainer>
-        <Sort items={sampleItems} onSortedChange={setSortedItems} />
-      </SortContainer>
-      <FeedContainer>
-        <Feed items={sortedItems} selectedFilters={selectedFilters} ItemComponent={FeedItem} />
-      </FeedContainer>
-    </SearchViewContainer>
-  );
-};
-
-export default SearchView;
-\`\`\`
+This story demonstrates several scenarios for the \`Feed\` component and how it combines with \`Filter\`, \`Sort\`, and \`Search2\`:
+1. **Plain Unsorted Feed**
+2. **Filterable Feed**
+3. **Sortable Feed**
+4. **Feed with Both Filtering and Sorting**
+5. **Predefined Sorting Feed**
+6. **Predefined Filtering Feed**
+7. **Searchable Feed**
+8. **Full Feed** (with integrated search, filter, and sort)
 
 ---
         `,
@@ -170,6 +37,7 @@ export default SearchView;
   },
 };
 
+// Sample data used in our examples
 const sampleItems = [
   { title: 'Task 1', description: 'Do this', status: 'completed', priority: 'high', date: '2023-08-20' },
   { title: 'Task 2', description: 'Do that', status: 'pending', priority: 'medium', date: '2023-08-22' },
@@ -177,31 +45,52 @@ const sampleItems = [
   { title: 'Task 4', description: 'Yet another task', status: 'inProgress', priority: 'medium', date: '2023-08-23' },
 ];
 
+/**
+ * 1) Plain Unsorted Feed
+ * Shows a basic feed with a custom item component (FeedItem2).
+ */
 export const PlainFeed = () => {
-  return <Feed items={sampleItems} ItemComponent={FeedItem2}/>;
+  return <Feed items={sampleItems} ItemComponent={FeedItem2} />;
 };
 
-
+/**
+ * 2) Filterable Feed
+ * Demonstrates dynamic filtering with the 'Filter' component.
+ * The feed automatically applies filters via 'selectedFilters'.
+ */
 export const FilterableFeed = () => {
   const [selectedFilters, setSelectedFilters] = useState({});
   return (
     <div>
       <Filter onChange={setSelectedFilters} />
-      <Feed items={sampleItems} selectedFilters={selectedFilters} ItemComponent={FeedItem2}/>
+      <Feed 
+        items={sampleItems} 
+        selectedFilters={selectedFilters} 
+        ItemComponent={FeedItem2}
+      />
     </div>
   );
 };
 
+/**
+ * 3) Sortable Feed
+ * Demonstrates dynamic sorting with the 'Sort' component.
+ * The feed uses 'sortedItems' which are updated by the 'Sort' component.
+ */
 export const SortableFeed = () => {
   const [sortedItems, setSortedItems] = useState(sampleItems);
   return (
     <div>
       <Sort items={sampleItems} onSortedChange={setSortedItems} />
-      <Feed items={sortedItems} ItemComponent={FeedItem2}/>
+      <Feed items={sortedItems} ItemComponent={FeedItem2} />
     </div>
   );
 };
 
+/**
+ * 4) Feed with Both Filtering and Sorting
+ * Combines 'Filter' and 'Sort' so you can do both at once.
+ */
 export const FilterableAndSortableFeed = () => {
   const [selectedFilters, setSelectedFilters] = useState({});
   const [sortedItems, setSortedItems] = useState(sampleItems);
@@ -210,31 +99,100 @@ export const FilterableAndSortableFeed = () => {
     <div>
       <Filter onChange={setSelectedFilters} />
       <Sort items={sampleItems} onSortedChange={setSortedItems} />
-      <Feed items={sortedItems} selectedFilters={selectedFilters} ItemComponent={FeedItem2}/>
+      <Feed 
+        items={sortedItems} 
+        selectedFilters={selectedFilters} 
+        ItemComponent={FeedItem2} 
+      />
     </div>
   );
 };
 
+/**
+ * 5) Predefined Sorting Feed
+ * Automatically sorts items by date descending on mount.
+ */
 export const PredefinedSortingFeed = () => {
   const [sortedItems, setSortedItems] = useState([]);
 
   useEffect(() => {
-    // Predefine sorting logic: sort by date descending
+    // Sort by date descending
     const sorted = [...sampleItems].sort((a, b) => new Date(b.date) - new Date(a.date));
     setSortedItems(sorted);
   }, []);
 
-  return <Feed items={sortedItems} ItemComponent={FeedItem2}/>;
+  return <Feed items={sortedItems} ItemComponent={FeedItem2} />;
 };
 
+/**
+ * 6) Predefined Filtering Feed
+ * Automatically filters items to only 'completed' status on mount.
+ */
 export const PredefinedFilteringFeed = () => {
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(() => {
-    // Predefine filtering logic: filter items with status 'completed'
+    // Filter by status === 'completed'
     const filtered = sampleItems.filter(item => item.status === 'completed');
     setFilteredItems(filtered);
   }, []);
 
-  return <Feed items={filteredItems} ItemComponent={FeedItem2}/>;
+  return <Feed items={filteredItems} ItemComponent={FeedItem2} />;
+};
+
+/**
+ * 7) Searchable Feed
+ * Adds a fuzzy search via 'Search2' that updates the list of displayed items.
+ */
+export const SearchableFeed = () => {
+  const [filteredItems, setFilteredItems] = useState(sampleItems);
+
+  return (
+    <div>
+      {/* Use Search2 with items for fuzzy search */}
+      <Search2 
+        items={sampleItems} 
+        onSearch={setFilteredItems} 
+      />
+      <Feed items={filteredItems} ItemComponent={FeedItem2} />
+    </div>
+  );
+};
+
+/**
+ * 8) FullFeed
+ * Combines Search2, Filter, and Sort for a complete searching, filtering, and sorting experience.
+ */
+export const FullFeed = () => {
+  const [searchedItems, setSearchedItems] = useState(sampleItems);
+  const [selectedFilters, setSelectedFilters] = useState({});
+  const [sortedItems, setSortedItems] = useState(sampleItems);
+
+  // Wrap the onSearch callback to reset filters and sorting when a new search happens
+  const handleSearch = (newSearchResults) => {
+    setSearchedItems(newSearchResults);
+    setSelectedFilters({});           // Reset filters
+    setSortedItems(newSearchResults); // Reset sorting base to the new search results
+  };
+
+  return (
+    <div>
+      <Search2 
+        items={sampleItems} 
+        onSearch={handleSearch} 
+      />
+      <Sort 
+        items={searchedItems} 
+        onSortedChange={setSortedItems} 
+      />
+      <Filter 
+        onChange={setSelectedFilters} 
+      />
+      <Feed 
+        items={sortedItems} 
+        selectedFilters={selectedFilters} 
+        ItemComponent={FeedItem2} 
+      />
+    </div>
+  );
 };

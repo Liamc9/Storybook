@@ -57,6 +57,7 @@ export default ExampleComponent;
     colour: {
       control: 'color', // Use the color picker control
     },
+    minHeight: { control: 'text' },
   },
 };
 
