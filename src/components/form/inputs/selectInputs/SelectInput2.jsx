@@ -1,9 +1,9 @@
-// TextInput.jsx
+// SelectInput2.jsx
 import React from 'react';
 import styled from 'styled-components';
 
 // Styled Components
-const InputWrapper = styled.div`
+const SelectWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -15,11 +15,12 @@ const StyledLabel = styled.label`
   color: #333;
 `;
 
-const StyledInput = styled.input`
+const StyledSelect = styled.select`
   padding: 0.75rem 1rem;
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
+  background-color: #fff;
   transition: border-color 0.3s ease;
 
   &:focus {
@@ -33,14 +34,20 @@ const StyledInput = styled.input`
   }
 `;
 
-// TextInput Component
-const TextInput = ({ label, ...props }) => {
+// SelectInput2 Component
+const SelectInput2 = ({ label, options, ...props }) => {
   return (
-    <InputWrapper>
+    <SelectWrapper>
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
-      <StyledInput {...props} />
-    </InputWrapper>
+      <StyledSelect {...props}>
+        {options && options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </StyledSelect>
+    </SelectWrapper>
   );
 };
 
-export default TextInput;
+export default SelectInput2;

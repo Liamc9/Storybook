@@ -1,112 +1,128 @@
-// src/components/Form/Form.stories.jsx
-import React, { useState } from 'react';
-import Form from '../../../components/form/forms/Form';
-import Input2 from '../../../components/form/inputs/Input2';
-import RadioButtons from '../../../components/form/inputs/RadioButtons';
-import Checkbox from '../../../components/form/inputs/Checkbox';
-import HiddenInput from '../../../components/form/inputs/HiddenInput';
-import FileInput from '../../../components/form/inputs/FileInput';
-import SubmitButton from '../../../components/form/inputs/SubmitButton';
-import ResetButton from '../../../components/form/inputs/ResetButton';
-import ColorPicker from '../../../components/form/inputs/ColorPicker';
-import ColorPickerWithPreview from '../../../components/form/inputs/ColorPickerWithPreview';
-import DateInput from '../../../components/form/inputs/DateInput';
-import DateTimeLocalInput from '../../../components/form/inputs/DateTimeLocalInput';
-import EmailInput from '../../../components/form/inputs/EmailInput';
-import FileUpload2 from '../../../components/form/inputs/FileUpload2';
-import NumberInput from '../../../components/form/inputs/NumberInput';
-import PasswordInput from '../../../components/form/inputs/PasswordInput';
-import RangeInput from '../../../components/form/inputs/RangeInput';
-import SelectInput2 from '../../../components/form/inputs/SelectInput2';
-import TelInput from '../../../components/form/inputs/TelInput';
-import TextareaInput from '../../../components/form/inputs/TextAreaInput';
-import TextInput from '../../../components/form/inputs/textinputs/TextInput';
-import TimeInput from '../../../components/form/inputs/TimeInput';
-import UrlInput from '../../../components/form/inputs/UrlInput';
-import ToggleSwitch from '../../../components/form/inputs/ToggleSwitch';
-
+import React from 'react';
+import SinglePageForm from '../../../components/form/forms/SinglePageForm';
+import MultiPageForm from '../../../components/form/forms/MultiPageForm';
 
 export default {
-  title: 'Components/Form',
-  component: Form,
+  title: 'Form/Forms/Form',
+  parameters: {
+    docs: {
+      description: {
+        component: `
+### Form Components
+
+A collection of form components designed for flexibility and ease of use. This includes:
+
+- **SinglePageForm**: A straightforward form component for simple use cases.
+- **MultiPageForm**: A multi-step form for collecting complex data over multiple pages.
+
+#### Best Practices
+
+- **Validation**: Use both basic and custom validation to ensure data integrity.
+- **Accessibility**: Ensure proper labeling for form fields.
+- **Customization**: Adjust form fields and validation logic to suit your requirements.
+        `,
+      },
+    },
+  },
 };
 
-export const Template = (args) => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    radiooption: '',
-    terms: false,
-  });
+const handleFormSubmit = (formData) => {
+  alert(`Form Submitted:\n${JSON.stringify(formData, null, 2)}`);
+};
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    });
-  };
+// Example Story: SinglePageForm
+export const SinglePageFormStory = () => {
+  return <SinglePageForm handleFormSubmit={handleFormSubmit} />;
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(JSON.stringify(formData, null, 2));
-  };
+SinglePageFormStory.storyName = 'Single Page Form';
+SinglePageFormStory.parameters = {
+  docs: {
+    description: {
+      story: `
+### SinglePageForm
 
-  return (
-    <Form onSubmit={handleSubmit} {...args}>
-      <Input2
-        label="First Name"
-        name="firstName"
-        value={formData.firstName}
-        onChange={handleChange}
-        placeholder="Enter your first name"
-      />
-      <RadioButtons
-        label="Options"
-        name="radiooption"
-        value={formData.radiooption}
-        onChange={handleChange}
-        options={[
-          { value: 'option1', label: 'Option 1' },
-          { value: 'option2', label: 'Option 2' },
-          { value: 'option3', label: 'Option 3' },
-        ]}
-      />
-      <Checkbox
-        label="I agree to the terms and conditions"
-        name="terms"
-        checked={formData.terms}
-        onChange={handleChange}
-      />
-      <HiddenInput name="hidden" value="hidden value" />
-      <FileInput label="File Input" name="file" onChange={handleChange}/>
-      <SubmitButton />
-      <ResetButton label='Reset' type='reset' />
-      <ColorPicker label="Color Picker" name="color" onChange={handleChange}/>
-      <ColorPickerWithPreview label="Color Picker With Preview" name="color" onChange={handleChange}/>
-      <DateInput label="Date Input" name="date" onChange={handleChange}/>
-      <DateTimeLocalInput label="Date Time Local Input" name="datetime" onChange={handleChange}/>
-      <EmailInput label="Email Input" name="email" onChange={handleChange}/>
-      <FileUpload2 label="File Upload" name="file" onChange={handleChange}/>
-      <NumberInput label="Number Input" name="number" onChange={handleChange}/>
-      <PasswordInput label="Password Input" name="password" onChange={handleChange}/>
-      <RangeInput label="Range Input" name="range" min={0} max={100} step={1} onChange={handleChange}/>
-      <SelectInput2
-        label="Select Input"
-        name="select"
-        value={formData.select}
-        onChange={handleChange}
-        options={[
-          { value: 'option1', label: 'Option 1' },
-          { value: 'option2', label: 'Option 2' },
-          { value: 'option3', label: 'Option 3' },
-        ]}
-      />
-      <TelInput label="Tel Input" name="tel" onChange={handleChange}/>
-      <TextareaInput label="Textarea Input" name="textarea" onChange={handleChange}/>
-      <TextInput label="Text Input" name="text" onChange={handleChange}/>
-      <TimeInput label="Time Input" name="time" onChange={handleChange}/>
-      <UrlInput label="Url Input" name="url" onChange={handleChange}/>
-      <ToggleSwitch label="Toggle Switch" name="toggle" onChange={handleChange}/>
-    </Form>
-  );
+A simple form component for collecting data on a single page. Suitable for straightforward use cases like contact forms, feedback forms, or settings pages.
+
+#### How to Use
+
+\`\`\`jsx
+import React from 'react';
+import SinglePageForm from '../components/forms/SinglePageForm';
+
+const handleFormSubmit = (formData) => {
+  console.log('Form Submitted:', formData);
+};
+
+const App = () => (
+  <SinglePageForm
+    initialFormData={{ name: '', email: '' }}
+    handleFormSubmit={handleFormSubmit}
+  />
+);
+
+export default App;
+\`\`\`
+
+#### Props
+
+| Name             | Type     | Description                                      |
+| ---------------- | -------- | ------------------------------------------------ |
+| \`initialFormData\` | \`object\` | Initial values for the form fields.            |
+| \`handleFormSubmit\` | \`function\` | Callback function triggered on form submission. |
+      `,
+    },
+  },
+};
+
+// Example Story: MultiPageForm
+export const MultiPageFormStory = () => {
+  return <MultiPageForm handleFormSubmit={handleFormSubmit} />;
+};
+
+MultiPageFormStory.storyName = 'Multi Page Form';
+MultiPageFormStory.parameters = {
+  docs: {
+    description: {
+      story: `
+### MultiPageForm
+
+A dynamic, multi-step form for collecting complex data across multiple pages.
+
+#### How to Use
+
+\`\`\`jsx
+import React from 'react';
+import MultiPageForm from '../components/forms/MultiPageForm';
+
+const handleFormSubmit = (formData) => {
+  console.log('Form Submitted:', formData);
+};
+
+const App = () => (
+  <MultiPageForm
+    initialData={{ name: '', email: '' }}
+    handleFormSubmit={handleFormSubmit}
+  />
+);
+
+export default App;
+\`\`\`
+
+#### Customization
+
+- **Pages Configuration**: Define the content and structure of each form page in the \`getPages\` function.
+- **Custom Validation**: Add page-specific validation using the \`customValidate\` property for each page.
+- **Navigation Buttons**: Customize navigation buttons by modifying the \`renderButtonLayout\` function.
+
+#### Props
+
+| Name             | Type     | Description                                      |
+| ---------------- | -------- | ------------------------------------------------ |
+| \`initialData\`    | \`object\` | Initial values for the form fields.            |
+| \`handleFormSubmit\` | \`function\` | Callback function triggered on form submission. |
+| \`pages\`          | \`array\`  | Configuration for multi-page forms.            |
+      `,
+    },
+  },
 };

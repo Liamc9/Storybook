@@ -1,9 +1,9 @@
-// TextInput.jsx
+// FileInput.jsx
 import React from 'react';
 import styled from 'styled-components';
 
 // Styled Components
-const InputWrapper = styled.div`
+const FileInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -16,15 +16,16 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-  padding: 0.75rem 1rem;
-  border: 2px solid #ddd;
+  padding: 0.5rem 1rem;
+  border: 2px dashed #ddd;
   border-radius: 8px;
   font-size: 1rem;
+  background-color: #fafafa;
+  cursor: pointer;
   transition: border-color 0.3s ease;
 
-  &:focus {
+  &:hover {
     border-color: #6200ee;
-    outline: none;
   }
 
   &:disabled {
@@ -33,14 +34,14 @@ const StyledInput = styled.input`
   }
 `;
 
-// TextInput Component
-const TextInput = ({ label, ...props }) => {
+// FileInput Component
+const FileInput = ({ label, ...props }) => {
   return (
-    <InputWrapper>
+    <FileInputWrapper>
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
-      <StyledInput {...props} />
-    </InputWrapper>
+      <StyledInput type="file" {...props} />
+    </FileInputWrapper>
   );
 };
 
-export default TextInput;
+export default FileInput;

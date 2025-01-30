@@ -1,9 +1,9 @@
-// TextInput.jsx
+// DateInput.jsx
 import React from 'react';
 import styled from 'styled-components';
 
 // Styled Components
-const InputWrapper = styled.div`
+const DateInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -33,14 +33,14 @@ const StyledInput = styled.input`
   }
 `;
 
-// TextInput Component
-const TextInput = ({ label, ...props }) => {
+// DateInput Component
+const DateInput = ({ label, ...props }) => {
   return (
-    <InputWrapper>
+    <DateInputWrapper>
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
-      <StyledInput {...props} />
-    </InputWrapper>
+      <StyledInput type="date" {...props} />
+    </DateInputWrapper>
   );
 };
 
-export default TextInput;
+export default DateInput;
