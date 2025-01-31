@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ColorPickerWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
@@ -23,7 +25,7 @@ const ColorInput = styled.input`
 `;
 
 const ColorPicker = ({ label, ...props }) => (
-  <ColorPickerWrapper>
+  <ColorPickerWrapper gridSpan={props.gridSpan}>
     <Label htmlFor={props.id}>{label}</Label>
     <ColorInput type="color" {...props}     />
   </ColorPickerWrapper>

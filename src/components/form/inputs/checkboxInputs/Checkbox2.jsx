@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Checkbox2 = ({ label, ...props }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper gridSpan={props.gridSpan}>
       <div className="checkbox-wrapper">
         <input id={props.id} type="checkbox" {...props}/>
         <label htmlFor={props.id}> <div className="tick_mark" /></label>
@@ -14,6 +14,8 @@ const Checkbox2 = ({ label, ...props }) => {
 }
 
 const StyledWrapper = styled.div`
+       grid-column: ${(props) => props.gridSpan || 'auto'};
+
   .checkbox-wrapper * {
     -webkit-tap-highlight-color: transparent;
     outline: none;

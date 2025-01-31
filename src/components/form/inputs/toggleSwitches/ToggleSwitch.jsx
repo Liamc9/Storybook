@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ToggleWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   display: flex;
   align-items: center;
   margin-bottom: 16px;
@@ -59,7 +61,7 @@ const ToggleSwitch = ({
   label,
   ...props
 }) => (
-  <ToggleWrapper >
+  <ToggleWrapper gridSpan={props.gridSpan}>
     <ToggleInput
       type="checkbox"
       {...props}

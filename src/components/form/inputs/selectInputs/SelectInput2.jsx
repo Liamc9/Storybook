@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // Styled Components
 const SelectWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -37,7 +38,7 @@ const StyledSelect = styled.select`
 // SelectInput2 Component
 const SelectInput2 = ({ label, options, ...props }) => {
   return (
-    <SelectWrapper>
+    <SelectWrapper gridSpan={props.gridSpan}>
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
       <StyledSelect {...props}>
         {options && options.map((option) => (

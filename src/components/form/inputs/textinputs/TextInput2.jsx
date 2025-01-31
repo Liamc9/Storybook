@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TextInput2 = ({label, ...props}) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper gridSpan={props.gridSpan}>
       <div className="input-container">
         <input type="text" {...props} />
         <label htmlFor={props.id} className="label">{label}</label>
@@ -14,6 +14,8 @@ const TextInput2 = ({label, ...props}) => {
 }
 
 const StyledWrapper = styled.div`
+        grid-column: ${(props) => props.gridSpan || 'auto'};
+
   .input-container {
     position: relative;
     margin: 50px auto;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const RadioButtons2 = ({ name, options = [], ...props }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper gridSpan={props.gridSpan}>
       <div className="radio-input">
         {options.map(({ id, value, label }) => (
           <label key={id} htmlFor={id}>
@@ -24,6 +24,8 @@ const RadioButtons2 = ({ name, options = [], ...props }) => {
 };
 
 const StyledWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   .radio-input {
     display: flex;
     flex-direction: column;

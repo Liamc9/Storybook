@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 // Styled Components
 const CheckboxWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -23,7 +25,7 @@ const StyledLabel = styled.label`
 // Checkbox Component
 const Checkbox = ({ label, ...props }) => {
   return (
-    <CheckboxWrapper>
+    <CheckboxWrapper gridSpan={props.gridSpan}>
       <StyledInput type="checkbox" {...props} />
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
     </CheckboxWrapper>

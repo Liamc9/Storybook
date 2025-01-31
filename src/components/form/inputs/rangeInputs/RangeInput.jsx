@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 // Styled Components
 const RangeInputWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -56,7 +58,7 @@ const StyledInput = styled.input`
 // RangeInput Component
 const RangeInput = ({ label, ...props }) => {
   return (
-    <RangeInputWrapper>
+    <RangeInputWrapper gridSpan={props.gridSpan}>
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
       <StyledInput type="range" {...props} />
     </RangeInputWrapper>

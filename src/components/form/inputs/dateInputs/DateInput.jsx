@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 // Styled Components
 const DateInputWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -36,7 +38,7 @@ const StyledInput = styled.input`
 // DateInput Component
 const DateInput = ({ label, ...props }) => {
   return (
-    <DateInputWrapper>
+    <DateInputWrapper gridSpan={props.gridSpan}>
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
       <StyledInput type="date" {...props} />
     </DateInputWrapper>

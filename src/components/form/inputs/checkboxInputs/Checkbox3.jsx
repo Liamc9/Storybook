@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Checkbox3 = ({ label, ...props }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper gridSpan={props.gridSpan}>
       <label className="container">
       <input id={props.id} type="checkbox" {...props}/>
       <svg viewBox="0 0 64 64" height="2em" width="2em">
@@ -16,6 +16,8 @@ const Checkbox3 = ({ label, ...props }) => {
 
 
 const StyledWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   .container {
     cursor: pointer;
   }

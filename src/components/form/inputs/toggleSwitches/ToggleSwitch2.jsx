@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ToggleSwitch2 = ({ name, ...props }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper gridSpan={props.gridSpan}>
       <label className="theme-switch">
         <input
           type="checkbox"
@@ -35,6 +35,8 @@ const ToggleSwitch2 = ({ name, ...props }) => {
 };
 
 const StyledWrapper = styled.div`
+        grid-column: ${(props) => props.gridSpan || 'auto'};
+
   .theme-switch {
     --toggle-size: 30px;
     /* the size is adjusted using font-size,

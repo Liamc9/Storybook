@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const RangeInput2 = ({...props}) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper gridSpan={props.gridSpan}>
       <label className="slider">
         <input type="range"  className="level" {...props} />
         <svg className="volume" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width={512} height={512} x={0} y={0} viewBox="0 0 24 24" style={{enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
@@ -18,6 +18,8 @@ const RangeInput2 = ({...props}) => {
 }
 
 const StyledWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   /* level settings 👇 */
 
   .slider {

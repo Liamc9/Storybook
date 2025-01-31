@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 // Styled Components
 const FileInputWrapper = styled.div`
+      grid-column: ${(props) => props.gridSpan || 'auto'};
+
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -37,7 +39,7 @@ const StyledInput = styled.input`
 // FileInput Component
 const FileInput = ({ label, ...props }) => {
   return (
-    <FileInputWrapper>
+    <FileInputWrapper gridSpan={props.gridSpan}>
       {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
       <StyledInput type="file" {...props} />
     </FileInputWrapper>
