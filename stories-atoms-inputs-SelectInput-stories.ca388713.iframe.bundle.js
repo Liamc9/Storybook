@@ -1,0 +1,39 @@
+"use strict";(self.webpackChunkstorybook=self.webpackChunkstorybook||[]).push([[1304],{"./src/stories/atoms/inputs/SelectInput.stories.js":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.r(__webpack_exports__),__webpack_require__.d(__webpack_exports__,{CustomColors:()=>CustomColors,Default:()=>Default,__namedExportsOrder:()=>__namedExportsOrder,default:()=>__WEBPACK_DEFAULT_EXPORT__});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),_components_atoms_inputs_SelectInput__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./src/components/atoms/inputs/SelectInput.jsx");function _extends(){return _extends=Object.assign?Object.assign.bind():function(n){for(var e=1;e<arguments.length;e++){var t=arguments[e];for(var r in t)({}).hasOwnProperty.call(t,r)&&(n[r]=t[r])}return n},_extends.apply(null,arguments)}const __WEBPACK_DEFAULT_EXPORT__={title:"Atoms/Inputs/SelectInput",component:_components_atoms_inputs_SelectInput__WEBPACK_IMPORTED_MODULE_1__.A,tags:["autodocs"],parameters:{docs:{description:{component:'\n\nThe `SelectInput` component is a customizable dropdown input with a floating label and a styled arrow.\n\n### Features\n- **Floating Label**: The label moves above the field when a value is selected or the field is focused.\n- **Customizable Colors**: Adjust the highlight color for focused states.\n- **Responsive Design**: Works well across different screen sizes.\n\n### Usage\n\n```jsx\nimport React, { useState } from "react";\nimport SelectInput from "../components/SelectInput";\n\nconst ExampleComponent = () => {\n  const [selectedValue, setSelectedValue] = useState("");\n\n  return (\n    <SelectInput\n      name="example"\n      value={selectedValue}\n      label="Select an Option"\n      color="#000"\n      options={[\n        { value: "option1", label: "Option 1" },\n        { value: "option2", label: "Option 2" },\n        { value: "option3", label: "Option 3" },\n      ]}\n      onChange={(e) => setSelectedValue(e.target.value)}\n    />\n  );\n};\n\nexport default ExampleComponent;\n```\n\n### Props\n- **name**: The name of the select input (default: "").\n- **value**: The current value of the select input (default: "").\n- **label**: Label text for the select input (default: "Select an Option").\n- **color**: Highlight color for focused states (default: "#000").\n- **options**: Array of options, each with value and label properties (default: []).\n- **onChange**: Callback function triggered on value change.\n        '}}},argTypes:{name:{control:{type:"text"},defaultValue:"example-select"},value:{control:{type:"text"},defaultValue:""},label:{control:{type:"text"},defaultValue:"Select an Option"},color:{control:{type:"color"},defaultValue:"#000"},options:{control:{type:"object"},defaultValue:[{value:"option1",label:"Option 1"},{value:"option2",label:"Option 2"},{value:"option3",label:"Option 3"}]},onChange:{action:"changed"}}},Template=args=>{const[value,setValue]=react__WEBPACK_IMPORTED_MODULE_0__.useState(args.value);return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_atoms_inputs_SelectInput__WEBPACK_IMPORTED_MODULE_1__.A,_extends({},args,{value,onChange:e=>{setValue(e.target.value),args.onChange(e)}}))},Default=Template.bind({});Default.args={name:"default-select",value:"",label:"Select an Option",color:"#000",options:[{value:"option1",label:"Option 1"},{value:"option2",label:"Option 2"},{value:"option3",label:"Option 3"}]};const CustomColors=Template.bind({});CustomColors.args={name:"custom-select",value:"",label:"Choose a Color",color:"#FF5733",options:[{value:"red",label:"Red"},{value:"blue",label:"Blue"},{value:"green",label:"Green"}]};const __namedExportsOrder=["Default","CustomColors"];Default.parameters={...Default.parameters,docs:{...Default.parameters?.docs,source:{originalSource:"args => {\n  const [value, setValue] = React.useState(args.value);\n  return <SelectInput {...args} value={value} onChange={e => {\n    setValue(e.target.value);\n    args.onChange(e);\n  }} />;\n}",...Default.parameters?.docs?.source}}},CustomColors.parameters={...CustomColors.parameters,docs:{...CustomColors.parameters?.docs,source:{originalSource:"args => {\n  const [value, setValue] = React.useState(args.value);\n  return <SelectInput {...args} value={value} onChange={e => {\n    setValue(e.target.value);\n    args.onChange(e);\n  }} />;\n}",...CustomColors.parameters?.docs?.source}}}},"./src/components/atoms/inputs/SelectInput.jsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>__WEBPACK_DEFAULT_EXPORT__});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),styled_components__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_Branding_icons_Icons__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./src/components/Branding/icons/Icons.jsx");const SelectContainer=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  position: relative;
+  font-family: sans-serif;
+`,sharedSelectStyles=styled_components__WEBPACK_IMPORTED_MODULE_2__.css`
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 2px solid;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+  appearance: none;
+  transition: border-color 0.3s ease-in-out;
+`,StyledSelect=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.select`
+  ${sharedSelectStyles}
+  border-color: ${_ref=>{let{isFocused,color}=_ref;return isFocused?color:"#D1D5DB"}};
+  color: ${_ref2=>{let{value}=_ref2;return value?"#000":"#6B7280"}}; /* Default placeholder style */
+`,StyledLabel=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.label`
+  position: absolute;
+  left: 0;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  background: white;
+  color: ${_ref3=>{let{isFocused,color}=_ref3;return isFocused?color:"#6B7280"}};
+  font-size: 1rem;
+  pointer-events: none;
+  transform: ${_ref4=>{let{hasValue,isFocused}=_ref4;return hasValue||isFocused?"translate(1.25rem, -70%) scale(0.9)":"translate(0.625rem, 0)"}};
+  transform-origin: left top;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+`,StyledArrow=styled_components__WEBPACK_IMPORTED_MODULE_2__.default.div`
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1rem;
+  color: ${_ref5=>{let{isFocused,color}=_ref5;return isFocused?color:"#6B7280"}};
+`,__WEBPACK_DEFAULT_EXPORT__=_ref6=>{let{name,value,onChange,color="#000",label,options=[]}=_ref6;const[isFocused,setIsFocused]=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(!1);return react__WEBPACK_IMPORTED_MODULE_0__.createElement(SelectContainer,null,react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledSelect,{name,id:name,value,onChange,onFocus:()=>setIsFocused(!0),onBlur:()=>setIsFocused(!1),isFocused,color,required:!0},react__WEBPACK_IMPORTED_MODULE_0__.createElement("option",{value:"",disabled:!0}),options.map((option=>react__WEBPACK_IMPORTED_MODULE_0__.createElement("option",{key:option.value,value:option.value},option.label)))),react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledLabel,{htmlFor:name,isFocused,color,hasValue:Boolean(value)},label),react__WEBPACK_IMPORTED_MODULE_0__.createElement(StyledArrow,{isFocused,color},react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Branding_icons_Icons__WEBPACK_IMPORTED_MODULE_1__.ChevronDownIcon,{className:"w-4 h-4"})))}}}]);
+//# sourceMappingURL=stories-atoms-inputs-SelectInput-stories.ca388713.iframe.bundle.js.map
