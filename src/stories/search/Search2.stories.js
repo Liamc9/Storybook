@@ -1,8 +1,8 @@
 // src/components/search/Search2.stories.js
 import React, { useState } from 'react';
-import Search2 from '../../components/search/Search2';
-import Feed from '../../components/search/Feed';
-import FeedItem2 from '../../components/search/FeedItem2';
+import Search2 from '../../components/search/search/Search2';
+import Feed from '../../components/search/feed/Feed';
+import FeedItem from '../../components/search/feedItem/FeedItem';
 
 export default {
   title: 'Search/Search/Search2',
@@ -34,7 +34,7 @@ export const Default = () => {
           onSearch={setFilteredItems} 
           historyItems={historyItems}
         />
-        <Feed items={filteredItems} ItemComponent={FeedItem2}/>
+        <Feed items={filteredItems} ItemComponent={FeedItem}/>
       </div>
     );
   };

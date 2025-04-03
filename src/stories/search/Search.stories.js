@@ -1,6 +1,6 @@
 // src/components/search/Search.stories.js
 import React, { useState } from 'react';
-import Search from '../../components/search/Search';
+import Search from '../../components/search/search/Search';
 
 export default {
   title: 'Search/Search/Search',
