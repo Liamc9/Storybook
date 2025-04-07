@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ImageCarousel2 from "../../../atoms/carousels/ImageCarousel2";
 import { CalendarIcon, LocationIcon, ChevronLeftIcon } from "../../../Branding/icons/Icons";
-import BottomDrawer from "../../../atoms/Drawers/BottomDrawer";
-import MessageForm from "../../../Lettz/components/MessageForm";
+import BottomSheet from "../../../atoms/overlays/drawers/BottomSheet";
+import MessageForm from "../components/MessageForm";
 import { useNavigate } from "react-router-dom"; 
 import PropTypes from "prop-types";
 
@@ -286,7 +286,7 @@ const RoomsView = ({
           Send Message
         </SendMessageButton>
       </FixedBottomBar>
-      <BottomDrawer
+      <BottomSheet
         isOpen={isDrawerOpen}
         onClose={closeDrawer}
         transitionDuration={300}
@@ -294,7 +294,7 @@ const RoomsView = ({
         maxWidth="600px"
       >
         <MessageForm onSend={handleSend} onClose={closeDrawer} />
-      </BottomDrawer>
+      </BottomSheet>
     </>
   );
 };
