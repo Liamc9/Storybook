@@ -2,59 +2,19 @@
 
 import React from 'react';
 import ImageCarousel from '../../../components/atoms/carousels/ImageCarousel';
+import ImageCarousel2 from '../../../components/atoms/carousels/ImageCarousel2';
 
 export default {
-  title: 'Atoms/Carousels/ImageCarousel',
+  title: 'Atoms/Carousels',
   component: ImageCarousel,
   tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-The \`ImageCarousel\` component is used to display a set of images in a carousel format. It allows users to navigate through multiple images with ease and provides a visually appealing way to showcase content such as product images, portfolios, or photo galleries.
-
-### Features
-- **Multiple Slides**: Supports an array of images that users can navigate through.
-- **Responsive Design**: Adapts to different screen sizes for a consistent user experience.
-- **Easy Customization**: Accepts various image sources for flexible use cases.
-
-### Usage
-
-\`\`\`jsx
-import React from 'react';
-import ImageCarousel from './components/ImageCarousel';
-
-const ExampleComponent = () => (
-  <ImageCarousel
-    images={[
-      'https://via.placeholder.com/800x400?text=Slide+1',
-      'https://via.placeholder.com/800x400?text=Slide+2',
-      'https://via.placeholder.com/800x400?text=Slide+3',
-    ]}
-  />
-);
-
-export default ExampleComponent;
-\`\`\`
-        `,
-      },
-    },
-  },
-  argTypes: {
-    images: {
-      control: 'object',
-      description: 'An array of image URLs to display in the carousel.',
-    },
-  },
 };
 
-const Template = (args) => <ImageCarousel {...args} />;
+const imageList = [
+  "https://www.thespruce.com/thmb/WQdt9HXB78tKg5U5eITP4ZUlYcA=/2500x0/filters:no_upscale():max_bytes(150000):strip_icc()/PAinteriors-7-cafe9c2bd6be4823b9345e591e4f367f.jpg",
+  "https://via.placeholder.com/600x400?text=Image+2",
+  "https://via.placeholder.com/600x400?text=Image+3"
+];
 
-export const Default = Template.bind({});
-Default.args = {
-  images: [
-    'https://via.placeholder.com/800x400?text=Slide+1',
-    'https://via.placeholder.com/800x400?text=Slide+2',
-    'https://via.placeholder.com/800x400?text=Slide+3',
-  ],
-};
+export const XImageCarousel = () => <ImageCarousel images={imageList} />;
+export const XImageCarousel2 = () => <ImageCarousel2 images={imageList} />;

@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import SelectInput2 from '../../../components/form/inputs/selectInputs/SelectInput2';
 import SelectInput3 from '../../../components/form/inputs/selectInputs/SelectInput3';
-
+import SelectInput from '../../../components/form/inputs/selectInputs/SelectInput';
+import SelectToTextInput from '../../../components/form/inputs/selectInputs/SelectToTextInput';
 // Storybook Meta Configuration
 export default {
   title: 'Form/Inputs/SelectInput',
@@ -141,3 +142,59 @@ CustomOptionsSelectInput3.args = {
   disabled: false,
 };
 
+
+// Template for SelectInput
+const TemplateSelectInput = (args) => {
+  const [selectedValue, setSelectedValue] = useState(args.value);
+
+  const handleChange = (e) => {
+    setSelectedValue(e.target.value);
+  };
+
+  return (
+    <div>
+      <SelectInput {...args} value={selectedValue} onChange={handleChange} />
+      <p>
+        Selected Value: <strong>{selectedValue || 'None'}</strong>
+      </p>
+    </div>
+  );
+};
+
+// Default SelectInput Story
+export const DefaultSelectInput = TemplateSelectInput.bind({});
+DefaultSelectInput.args = {
+  label: 'Choose an option',
+  id: 'select-input-default',
+  options: sampleOptions,
+  value: '',
+  disabled: false,
+};
+
+// Template for SelectToTextInput
+const TemplateSelectToTextInput = (args) => {
+  const [selectedValue, setSelectedValue] = useState(args.value);
+
+  const handleChange = (e) => {
+    setSelectedValue(e.target.value);
+  };
+
+  return (
+    <div>
+      <SelectToTextInput {...args} value={selectedValue} onChange={handleChange} />
+      <p>
+        Selected Value: <strong>{selectedValue || 'None'}</strong>
+      </p>
+    </div>
+  );
+};
+
+// Default SelectToTextInput Story
+export const DefaultSelectToTextInput = TemplateSelectToTextInput.bind({});
+DefaultSelectToTextInput.args = {
+  label: 'Choose an option or enter a custom value',
+  id: 'select-to-text-input-default',
+  options: sampleOptions,
+  value: '',
+  disabled: false,
+};

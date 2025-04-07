@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import FileInput from '../../../components/form/inputs/fileInputs/FileInput';
 import FileInput2 from '../../../components/form/inputs/fileInputs/FileInput2';
+import FileUpload from '../../../components/form/inputs/fileInputs/FileUpload';
+import CustomFileUpload from '../../../components/form/inputs/fileInputs/CustomFileUpload';
 
 // Storybook Meta Configuration
 export default {
@@ -152,4 +154,72 @@ MultipleFilesFileInput2.args = {
   id: 'file-input2-multiple',
   accept: '*/*',
   multiple: true,
+};
+
+// FileUpload Component Story
+export const FileUploadStory = (args) => {
+  const [files, setFiles] = useState([]);
+
+  const handleChange = (e) => {
+    setFiles(Array.from(e.target.files));
+  };
+
+  return (
+    <div>
+      <FileUpload {...args} onChange={handleChange} />
+      <div>
+        <h4>Selected File(s):</h4>
+        {files.length > 0 ? (
+          <ul>
+            {files.map((file, index) => (
+              <li key={index}>
+                {file.name} - {(file.size / 1024).toFixed(2)} KB
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No files selected.</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// FileUpload Story
+export const DefaultFileUpload = FileUploadStory.bind({});
+DefaultFileUpload.args = {
+  label: 'Upload File',
+  id: 'file-upload-default',
+  accept: '*/*',
+  multiple: false,
+  disabled: false,
+};
+
+// custom FileUpload Component Story
+export const CustomFileUploadStory = (args) => {
+  const [files, setFiles] = useState([]);
+
+  const handleChange = (e) => {
+    setFiles(Array.from(e.target.files));
+  };
+
+  return (
+    <div>
+      <CustomFileUpload {...args} onChange={handleChange} />
+      <div>
+        <h4>Selected File(s):</h4>
+        {files.length > 0 ? (
+          <ul>
+            {files.map((file, index) => (
+              <li key={index}>
+                {file.name} - {(file.size / 1024).toFixed(2)} KB
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No files selected.</p>
+        )}
+      </div>
+    </div>
+  );
 };

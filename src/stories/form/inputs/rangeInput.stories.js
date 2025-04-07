@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import RangeInput from '../../../components/form/inputs/rangeInputs/RangeInput';
 import RangeInput2 from '../../../components/form/inputs/rangeInputs/RangeInput2';
-
+import RangeSlider from '../../../components/form/inputs/rangeInputs/RangeSlider';
 // Storybook Meta Configuration
 export default {
   title: 'Form/Inputs/RangeInput',
@@ -94,4 +94,29 @@ StyledRange.args = {
   max: 24,
   step: 1,
   defaultValue: 12,
+};
+
+// Template for RangeSlider
+const TemplateSlider = (args) => {
+  const [value, setValue] = useState(args.defaultValue);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return (
+    <div>
+      <RangeSlider {...args} value={value} onChange={handleChange} />
+      <p>Selected Value: {value}</p>
+    </div>
+  );
+};
+// RangeSlider Story
+export const RangeSliderStory = TemplateSlider.bind({});
+RangeSliderStory.args = {
+  id: 'range-slider',
+  min: 0,
+  max: 100,
+  step: 1,
+  defaultValue: 50,
 };

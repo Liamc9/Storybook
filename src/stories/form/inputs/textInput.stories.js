@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import TextInput from '../../../components/form/inputs/textInputs/TextInput';
 import TextInput2 from '../../../components/form/inputs/textInputs/TextInput2';
 import TextInput3 from '../../../components/form/inputs/textInputs/TextInput3';
-
+import Input from '../../../components/form/inputs/textInputs/Input';
 // Storybook Meta Configuration
 export default {
   title: 'Form/Inputs/TextInput',
@@ -99,4 +99,28 @@ FloatingLabel2.args = {
   label: 'Floating Label Input',
   id: 'text-input-floating',
   type: 'text',
+};
+
+// Template for Input
+const TemplateInput = (args) => {
+  const [value, setValue] = useState(args.value);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return (
+    <div>
+      <Input {...args} value={value} onChange={handleChange} />
+    </div>
+  );
+};
+// Input Story
+export const InputStory = TemplateInput.bind({});
+InputStory.args = {
+  label: 'Input',
+  id: 'input-default',
+  placeholder: 'Enter text here...',
+  type: 'text',
+  value: '',
 };
