@@ -14,31 +14,6 @@ export default {
       </MemoryRouter>
     ),
   ],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-# StackedList Component
-
-The \`StackedList\` component is used to group a category of settings items. It displays a category title followed by a list of \`MenuItem\` components.
-
-## Usage
-
-\`\`\`jsx
-import { UsersIcon, NotificationsIcon } from './icons/Icons';
-
-<StackedList 
-  category="Profile Settings" 
-  items={[
-    { icon: UsersIcon, text: 'Account Info', link: '/account-info' },
-    { icon: NotificationsIcon, text: 'Privacy Settings', link: '/privacy-settings' },
-  ]}
-/>
-\`\`\`
-`,
-      },
-    },
-  },
 };
 
 const Template = (args) => <StackedList {...args} />;

@@ -19,6 +19,9 @@ const Template = (args) => <EditSettingsTemplate {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   headerTitle: 'Manage Notifications',
+  toggleColor: 'blue',
+  // The initialValues will be loaded into the component's state,
+  // and any change in the fields will immediately trigger the onSave callback.
   initialValues: {
     field1: 'Initial Value 1',
     field2: 'Initial Value 2',
@@ -32,7 +35,12 @@ Default.args = {
       title: 'Manage Notifications',
       fields: [
         { name: 'Name', type: 'EditableTextField', fieldName: 'field1' },
-        { name: 'Category', type: 'SelectField', fieldName: 'field2', options: ['Option 1', 'Option 2', 'Option 3'] },
+        {
+          name: 'Category',
+          type: 'SelectField',
+          fieldName: 'field2',
+          options: ['Option 1', 'Option 2', 'Option 3'],
+        },
         { name: 'Enable Feature', type: 'ToggleField', fieldName: 'toggleField' },
       ],
     },
@@ -47,6 +55,5 @@ Default.args = {
   ],
   onSave: (data) => {
     console.log('Saved data:', data);
-    alert('Changes saved!');
   },
 };

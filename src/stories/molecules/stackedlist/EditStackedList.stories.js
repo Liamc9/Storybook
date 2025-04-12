@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EditStackedList from '../../../components/molecules/stackedlist/EditStackedList';
 import { UserIcon2 } from '../../../components/Branding/icons/Icons';
 
@@ -6,77 +6,35 @@ export default {
   title: 'Molecules/StackedList/EditStackedList',
   component: EditStackedList,
   tags: ['molecules', 'autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-### EditStackedList Component
-
-The \`EditStackedList\` component displays a vertically stacked list of dynamic components. It supports components such as \`EditableTextField\`, \`SelectField\`, and \`ToggleField\`.
-
-#### Features:
-- Dynamically renders different types of components (e.g., editable text fields, dropdowns, toggle switches).
-- Accepts configuration through an \`items\` array, where each item specifies the type of component and its props.
-
-#### Props:
-- **\`items\`** (Array of Objects): Defines the list of components to render. Each object should have:
-  - **\`type\`** (String): The type of component to render (e.g., \`EditableTextField\`, \`SelectField\`, \`ToggleField\`).
-  - **\`props\`** (Object): The props to pass to the respective component.
-
-#### Usage Example:
-\`\`\`jsx
-import React, { useState } from 'react';
-import EditStackedList from './EditStackedList';
-import { UserIcon2 } from '../../icons/Icons';
-
-const Example = () => {
-  const [textValue, setTextValue] = useState('Edit me');
-  const [selectValue, setSelectValue] = useState('Option 1');
-  const [toggleValue, setToggleValue] = useState(false);
-
-  const items = [
-    {
-      type: 'EditableTextField',
-      props: {
-        icon: UserIcon2,
-        name: 'Text Field',
-        value: textValue,
-        onUpdate: setTextValue,
-      },
-    },
-    {
-      type: 'SelectField',
-      props: {
-        icon: UserIcon2,
-        name: 'Select Field',
-        value: selectValue,
-        options: ['Option 1', 'Option 2', 'Option 3'],
-        onChange: setSelectValue,
-      },
-    },
-    {
-      type: 'ToggleField',
-      props: {
-        icon: UserIcon2,
-        name: 'Toggle Field',
-        value: toggleValue,
-        onChange: setToggleValue,
-      },
-    },
-  ];
-
-  return <EditStackedList items={items} />;
 };
 
-export default Example;
-\`\`\`
-`,
-      },
-    },
-  },
-};
+const Template = (args) => {
+  // Initialize state using args.items
+  const [items, setItems] = useState(args.items);
 
-const Template = (args) => <EditStackedList {...args} />;
+  // When a field updates, we update the corresponding item in state.
+  // We rely on each item having a unique identifier,
+  // which can be provided via the `fieldName` prop (or fall back to name).
+  const updateState = (fieldName, newValue) => {
+    setItems((prevItems) =>
+      prevItems.map((item) => {
+        const identifier = item.props.fieldName || item.props.name;
+        if (identifier === fieldName) {
+          return {
+            ...item,
+            props: {
+              ...item.props,
+              value: newValue,
+            },
+          };
+        }
+        return item;
+      })
+    );
+  };
+
+  return <EditStackedList {...args} items={items} updateState={updateState} />;
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -86,6 +44,7 @@ Default.args = {
       props: {
         icon: UserIcon2,
         name: 'Username',
+        fieldName: 'Username', // Unique identifier
         value: 'John Doe',
         onUpdate: (newValue) => console.log('Updated Username:', newValue),
       },
@@ -95,6 +54,7 @@ Default.args = {
       props: {
         icon: UserIcon2,
         name: 'Language',
+        fieldName: 'Language', // Unique identifier
         value: 'English',
         options: ['English', 'Spanish', 'French'],
         onChange: (newValue) => console.log('Updated Language:', newValue),
@@ -105,17 +65,11 @@ Default.args = {
       props: {
         icon: UserIcon2,
         name: 'Enable Notifications',
+        fieldName: 'Enable Notifications', // Unique identifier
         value: true,
-        onChange: (newValue) => console.log('Toggled Notifications:', newValue),
+        onChange: (newValue) =>
+          console.log('Toggled Notifications:', newValue),
       },
     },
   ],
-};
-Default.parameters = {
-  docs: {
-    description: {
-      story: `
-This is the default usage of the \`EditStackedList\` component. It dynamically renders a stacked list of components (\`EditableTextField\`, \`SelectField\`, \`ToggleField\`), each configured with its specific props.`,
-    },
-  },
 };
