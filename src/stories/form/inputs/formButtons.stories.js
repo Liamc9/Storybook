@@ -1,14 +1,11 @@
 // src/components/__stories__/Button.stories.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import SubmitButton from '../../../components/form/inputs/formButtons/SubmitButton';
 import ResetButton from '../../../components/form/inputs/formButtons/ResetButton';
 
-// Storybook Meta Configuration
 export default {
   title: 'Form/Inputs/FormButtons',
-  component: SubmitButton,
-  subcomponents: { ResetButton },
   argTypes: {
     label: {
       control: 'text',
@@ -24,27 +21,12 @@ export default {
   },
 };
 
-// Template for SubmitButton
-const SubmitTemplate = (args) => {
-
-  return <SubmitButton {...args} />;
-};
-
-// SubmitButton Story
-export const Submit = SubmitTemplate.bind({});
+export const Submit = (args) => <SubmitButton {...args} />;
 Submit.args = {
   label: 'Submit',
 };
 
-// Template for ResetButton
-const ResetTemplate = (args) => {
-
-
-  return <ResetButton {...args}  />;
-};
-
-// ResetButton Story
-export const Reset = ResetTemplate.bind({});
+export const Reset = (args) => <ResetButton {...args} />;
 Reset.args = {
   label: 'Reset',
 };

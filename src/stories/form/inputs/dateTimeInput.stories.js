@@ -66,8 +66,8 @@ const DateInputTemplate = (args) => {
 };
 
 // Default DateInput Story
-export const DefaultDateInput = DateInputTemplate.bind({});
-DefaultDateInput.args = {
+export const DefaultDateInputStory = (args) => <DateInputTemplate {...args} />;
+DefaultDateInputStory.args = {
   label: 'Select Date',
   id: 'date-input-default',
   name: 'dateInput',
@@ -77,18 +77,9 @@ DefaultDateInput.args = {
   required: false,
 };
 
-// Template for DateTimeLocalInput
-const DateTimeLocalTemplate = (args) => {
-
-  return (
-    <div>
-      <DateTimeLocalInput {...args}  />
-    </div>
-  );
-};
 
 // DateTimeLocalInput Story
-export const DateTimeLocal = DateTimeLocalTemplate.bind({});
+export const DateTimeLocal = (args) => <DateTimeLocalInput {...args} />;
 DateTimeLocal.args = {
   label: 'Select Date & Time',
   name: 'dateTimeLocalInput',
@@ -98,29 +89,17 @@ DateTimeLocal.args = {
   required: false,
 };
 
-// Template for TimeInput
-const TimeInputTemplate = (args) => {
-  const [value, setValue] = useState(args.value);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  return (
-    <div>
-      <TimeInput {...args} value={value} onChange={handleChange} />
-    </div>
-  );
-};
 
 // Default TimeInput Story
-export const DefaultTimeInput = TimeInputTemplate.bind({});
+export const DefaultTimeInput = (args) => <TimeInput {...args} />;
 DefaultTimeInput.args = {
   label: 'Select Time',
   name: 'timeInput',
   value: '',
   placeholder: 'HH:MM',
   required: false,
+  min: '00:00',
+  max: '23:59',
 };
 
 

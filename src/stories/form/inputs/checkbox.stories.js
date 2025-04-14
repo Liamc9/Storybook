@@ -1,15 +1,14 @@
 // src/components/__stories__/Checkbox.stories.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import Checkbox from '../../../components/form/inputs/checkboxInputs/Checkbox';
 import Checkbox2 from '../../../components/form/inputs/checkboxInputs/Checkbox2';
 import Checkbox3 from '../../../components/form/inputs/checkboxInputs/Checkbox3';
 import CheckedItem from '../../../components/form/inputs/checkboxInputs/CheckedItem';
-// Storybook Meta Configuration
+import { FaRegUserCircle } from 'react-icons/fa'; // Example icon, replace with your own
+
 export default {
   title: 'Form/Inputs/Checkbox',
-  component: Checkbox,
-  subcomponents: { Checkbox2, Checkbox3 },
   argTypes: {
     label: {
       control: 'text',
@@ -29,64 +28,35 @@ export default {
   },
 };
 
-// Template for Default Checkbox
-const Template = (args) => {
 
-
-  return <Checkbox {...args}  />;
-};
-
-// Default Checkbox Story
-export const Default = Template.bind({});
-Default.args = {
+export const DefaultCheckbox = (args) => <Checkbox {...args} />;
+DefaultCheckbox.args = {
   label: 'Default Checkbox',
   id: 'checkbox-default',
 };
 
-// Template for Checkbox2
-const Template2 = (args) => {
 
-
-  return <Checkbox2 {...args}/>;
-};
-
-// Checkbox2 Story
-export const AnimatedCheckbox = Template2.bind({});
+export const AnimatedCheckbox = (args) => <Checkbox2 {...args} />;
 AnimatedCheckbox.args = {
   label: 'Animated Checkbox',
   id: 'checkbox-animated',
 };
 
-// Template for Checkbox3
-const Template3 = (args) => {
 
-
-  return <Checkbox3 {...args}/>;
-};
-
-// Checkbox3 Story
-export const SVGCheckbox = Template3.bind({});
+export const SVGCheckbox = (args) => <Checkbox3 {...args} />;
 SVGCheckbox.args = {
   label: 'SVG Checkbox',
   id: 'checkbox-svg',
 };
 
-// Template for CheckedItem
-const Template4 = (args) => {
-  const [checked, setChecked] = useState(false);
 
-  const handleChange = () => {
-    setChecked(!checked);
-  };
-
-  return <CheckedItem {...args} checked={checked} onChange={handleChange} />;
-};
-// CheckedItem Story
-export const CheckedItemStory = Template4.bind({}); 
+export const CheckedItemStory = (args) => <CheckedItem {...args} />;
 CheckedItemStory.args = {
   label: 'Checked Item',
   id: 'checked-item',
+  height: '7rem',
+  width: '7rem',
+  svg: <FaRegUserCircle size="3rem" />,
+  color: '#3b82f6',
 };
-CheckedItemStory.argTypes = {
-  onChange: { action: 'changed' },
-};
+

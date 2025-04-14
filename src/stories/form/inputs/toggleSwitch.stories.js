@@ -1,14 +1,11 @@
 // src/components/__stories__/ToggleSwitch.stories.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import ToggleSwitch from '../../../components/form/inputs/toggleSwitches/ToggleSwitch';
 import ToggleSwitch2 from '../../../components/form/inputs/toggleSwitches/ToggleSwitch2';
 
-// Storybook Meta Configuration
 export default {
   title: 'Form/Inputs/ToggleSwitch',
-  component: ToggleSwitch,
-  subcomponents: { ToggleSwitch2 },
   argTypes: {
     label: {
       control: 'text',
@@ -33,32 +30,16 @@ export default {
   },
 };
 
-// Template for ToggleSwitch
-const ToggleTemplate = (args) => {
- 
-
-  return <ToggleSwitch {...args} />;
-};
-
-// Default ToggleSwitch Story
-export const DefaultToggle = ToggleTemplate.bind({});
+export const DefaultToggle = (args) => <ToggleSwitch {...args} />;
 DefaultToggle.args = {
   label: 'Default Toggle',
   id: 'toggle-default',
   disabled: false,
 };
 
-// Template for ToggleSwitch2
-const ToggleSwitch2Template = (args) => {
-
-  return <ToggleSwitch2 {...args} />;
-};
-
-// ToggleSwitch2 Story
-export const AnimatedToggle = ToggleSwitch2Template.bind({});
+export const AnimatedToggle = (args) => <ToggleSwitch2 {...args} />;
 AnimatedToggle.args = {
   label: 'Animated Toggle',
   id: 'toggle-animated',
   disabled: false,
 };
-

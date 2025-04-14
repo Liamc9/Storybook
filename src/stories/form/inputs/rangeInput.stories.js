@@ -1,14 +1,12 @@
 // src/components/__stories__/RangeInput.stories.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import RangeInput from '../../../components/form/inputs/rangeInputs/RangeInput';
 import RangeInput2 from '../../../components/form/inputs/rangeInputs/RangeInput2';
 import RangeSlider from '../../../components/form/inputs/rangeInputs/RangeSlider';
-// Storybook Meta Configuration
+
 export default {
   title: 'Form/Inputs/RangeInput',
-  component: RangeInput,
-  subcomponents: { RangeInput2 },
   argTypes: {
     label: {
       control: 'text',
@@ -43,25 +41,8 @@ export default {
   },
 };
 
-// Template for Default RangeInput
-const Template = (args) => {
-  const [value, setValue] = useState(args.defaultValue);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  return (
-    <div>
-      <RangeInput {...args} value={value} onChange={handleChange} />
-      <p>Selected Value: {value}</p>
-    </div>
-  );
-};
-
-// Default RangeInput Story
-export const Default = Template.bind({});
-Default.args = {
+export const DefaultRangeInput = (args) => <RangeInput {...args} />;
+DefaultRangeInput.args = {
   label: 'Default Range',
   id: 'range-default',
   min: 0,
@@ -70,25 +51,8 @@ Default.args = {
   defaultValue: 50,
 };
 
-// Template for RangeInput2
-const Template2 = (args) => {
-  const [value, setValue] = useState(args.defaultValue);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  return (
-    <div>
-      <RangeInput2 {...args} value={value} onChange={handleChange} />
-      <p>Selected Value: {value}</p>
-    </div>
-  );
-};
-
-// RangeInput2 Story
-export const StyledRange = Template2.bind({});
-StyledRange.args = {
+export const StyledRangeInput = (args) => <RangeInput2 {...args} />;
+StyledRangeInput.args = {
   id: 'range-styled',
   min: 0,
   max: 24,
@@ -96,27 +60,15 @@ StyledRange.args = {
   defaultValue: 12,
 };
 
-// Template for RangeSlider
-const TemplateSlider = (args) => {
-  const [value, setValue] = useState(args.defaultValue);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  return (
-    <div>
-      <RangeSlider {...args} value={value} onChange={handleChange} />
-      <p>Selected Value: {value}</p>
-    </div>
-  );
-};
-// RangeSlider Story
-export const RangeSliderStory = TemplateSlider.bind({});
+export const RangeSliderStory = (args) => <RangeSlider {...args} />;
 RangeSliderStory.args = {
   id: 'range-slider',
   min: 0,
   max: 100,
   step: 1,
   defaultValue: 50,
+  minimumGap: 10,
+  valuePrefix: '$',
+  valueSuffix: ' USD',
+  label: 'Range Slider',
 };

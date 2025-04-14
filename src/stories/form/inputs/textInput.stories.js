@@ -1,15 +1,13 @@
 // src/components/__stories__/TextInput.stories.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import TextInput from '../../../components/form/inputs/textInputs/TextInput';
 import TextInput2 from '../../../components/form/inputs/textInputs/TextInput2';
 import TextInput3 from '../../../components/form/inputs/textInputs/TextInput3';
 import Input from '../../../components/form/inputs/textInputs/Input';
-// Storybook Meta Configuration
+
 export default {
   title: 'Form/Inputs/TextInput',
-  component: TextInput,
-  subcomponents: { TextInput2 },
   argTypes: {
     label: {
       control: 'text',
@@ -33,7 +31,7 @@ export default {
     },
     type: {
       control: 'select',
-      options: ['text', 'password', 'email', 'number'],
+      options: ['text', 'password', 'email', 'number', 'tel', 'url'],
       description: 'Type of the input',
       defaultValue: 'text',
     },
@@ -42,81 +40,48 @@ export default {
       description: 'Value of the input',
       defaultValue: '',
     },
+    maxLength: {
+      control: 'number',
+      description: 'Maximum length of the input value',
+      defaultValue: 100,
+    },
+    pattern: {
+      control: 'text',
+      description: 'Regular expression pattern for input validation',
+      defaultValue: '',
+    },
+    required: {
+      control: 'boolean',
+      description: 'Marks the input as required',
+      defaultValue: false,
+    },
+    
   },
 };
 
-// Template for Default TextInput
-const Template = (args) => {
-
-  return (
-    <div>
-      <TextInput {...args}  />
-    </div>
-  );
-};
-
-// Default TextInput Story
-export const Default = Template.bind({});
-Default.args = {
+export const DefaultTextInput = (args) => <TextInput {...args} />;
+DefaultTextInput.args = {
   label: 'Default Text Input',
   id: 'text-input-default',
   placeholder: 'Enter text here...',
   type: 'text',
 };
 
-// Template for TextInput2
-const Template2 = (args) => {
-
-
-  return (
-    <div>
-      <TextInput2 {...args}  />
-    </div>
-  );
-};
-
-// TextInput2 Story
-export const FloatingLabel = Template2.bind({});
+export const FloatingLabel = (args) => <TextInput2 {...args} />;
 FloatingLabel.args = {
   label: 'Floating Label Input',
   id: 'text-input-floating',
   type: 'text',
 };
 
-// Template for TextInput2
-const Template3 = (args) => {
-
-  return (
-    <div>
-      <TextInput3 {...args} />
-    </div>
-  );
-};
-
-// TextInput3 Story
-export const FloatingLabel2 = Template3.bind({});
+export const FloatingLabel2 = (args) => <TextInput3 {...args} />;
 FloatingLabel2.args = {
   label: 'Floating Label Input',
   id: 'text-input-floating',
   type: 'text',
 };
 
-// Template for Input
-const TemplateInput = (args) => {
-  const [value, setValue] = useState(args.value);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  return (
-    <div>
-      <Input {...args} value={value} onChange={handleChange} />
-    </div>
-  );
-};
-// Input Story
-export const InputStory = TemplateInput.bind({});
+export const InputStory = (args) => <Input {...args} />;
 InputStory.args = {
   label: 'Input',
   id: 'input-default',

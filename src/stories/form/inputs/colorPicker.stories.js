@@ -1,9 +1,6 @@
-// src/components/__stories__/ColorPicker.stories.jsx
-
-import React, { useState } from 'react';
+import React from 'react';
 import ColorPicker from '../../../components/form/inputs/colorPickers/ColorPicker';
 
-// Storybook Meta Configuration
 export default {
   title: 'Form/Inputs/ColorPicker',
   component: ColorPicker,
@@ -32,28 +29,10 @@ export default {
   },
 };
 
-// Template for ColorPicker
-const Template = (args) => {
-  const [color, setColor] = useState(args.value);
-
-  const handleChange = (e) => {
-    setColor(e.target.value);
-  };
-
-  return (
-    <div>
-      <ColorPicker {...args} value={color} onChange={handleChange} />
-      <p>Selected Color: <span style={{ color }}>{color}</span></p>
-    </div>
-  );
-};
-
-// Default ColorPicker Story
-export const Default = Template.bind({});
+export const Default = (args) => <ColorPicker {...args} />;
 Default.args = {
   label: 'Choose Color',
   id: 'color-picker-default',
   value: '#ff0000',
   disabled: false,
 };
-
